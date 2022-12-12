@@ -1,0 +1,13 @@
+Game.dir/
+lib/
+
+.vs/
+Debug/
+Release/
+x64/
+*.vcxproj.user
+
+*.pdb
+*.obj
+*.lib
+*.a

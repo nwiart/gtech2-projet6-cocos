@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E67825F2-7C91-3D44-A674-98A89F373D69}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>SYNC_RESOURCE-Game</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "    copying to S:/Game/bin/Game/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python27\python.exe" S:/Game/cocos2d/cmake/scripts/sync_folder.py -s S:/Game/Resources -d S:/Game/bin/Game/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "    copying to S:/Game/bin/Game/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python27\python.exe" S:/Game/cocos2d/cmake/scripts/sync_folder.py -s S:/Game/Resources -d S:/Game/bin/Game/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "    copying to S:/Game/bin/Game/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python27\python.exe" S:/Game/cocos2d/cmake/scripts/sync_folder.py -s S:/Game/Resources -d S:/Game/bin/Game/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "    copying to S:/Game/bin/Game/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python27\python.exe" S:/Game/cocos2d/cmake/scripts/sync_folder.py -s S:/Game/Resources -d S:/Game/bin/Game/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="S:\Game\CMakeFiles\b1df424f2335a4eb9a8ce1451017cac9\SYNC_RESOURCE-Game.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "Copying resources for Game ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">S:\Game\CMakeFiles\SYNC_RESOURCE-Game</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "Copying resources for Game ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">S:\Game\CMakeFiles\SYNC_RESOURCE-Game</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "Copying resources for Game ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">S:\Game\CMakeFiles\SYNC_RESOURCE-Game</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -E echo "Copying resources for Game ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">S:\Game\CMakeFiles\SYNC_RESOURCE-Game</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="S:\Game\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game --check-stamp-file S:/Game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeSystem.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">S:\Game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game --check-stamp-file S:/Game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeSystem.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">S:\Game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game --check-stamp-file S:/Game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeSystem.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">S:\Game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game --check-stamp-file S:/Game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\CMakeFiles\3.22.1\CMakeSystem.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">S:\Game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="S:\Game\CMakeFiles\SYNC_RESOURCE-Game">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="S:\Game\ZERO_CHECK.vcxproj">
+      <Project>{C5938DA8-C53F-3348-88C0-1949C8AD5DC3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
