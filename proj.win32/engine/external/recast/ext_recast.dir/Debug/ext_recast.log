@@ -1,0 +1,19 @@
+﻿  DebugDraw.cpp
+  DetourDebugDraw.cpp
+  DetourAlloc.cpp
+  DetourCommon.cpp
+  DetourNavMesh.cpp
+  DetourNavMeshBuilder.cpp
+  DetourNavMeshQuery.cpp
+  DetourNode.cpp
+  DetourCrowd.cpp
+  DetourLocalBoundary.cpp
+  DetourObstacleAvoidance.cpp
+S:\Game\cocos2d\external\recast\DetourCrowd\DetourObstacleAvoidance.cpp(334,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  DetourPathCorridor.cpp
+  DetourPathQueue.cpp
+  DetourProximityGrid.cpp
+  DetourTileCache.cpp
+  DetourTileCacheBuilder.cpp
+  Generating Code...
+  ext_recast.vcxproj -> S:\Game\proj.win32\lib\Debug\ext_recast.lib
