@@ -9,5 +9,4 @@ x64/
 
 *.pdb
 *.obj
-*.lib
 *.a
