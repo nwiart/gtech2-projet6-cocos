@@ -1,95 +1,97 @@
-﻿libchipmunk.lib(cpArbiter.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpArbiter.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpBody.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpBody.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpShape.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpShape.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpace.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpace.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpaceQuery.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpaceQuery.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpaceStep.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpaceStep.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpaceDebug.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpaceDebug.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(chipmunk.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(chipmunk.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpaceComponent.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpaceComponent.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpConstraint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpConstraint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpPinJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpPinJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSlideJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSlideJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpPivotJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpPivotJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpGrooveJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpGrooveJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpDampedSpring.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpDampedSpring.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpDampedRotarySpring.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpDampedRotarySpring.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpRotaryLimitJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpRotaryLimitJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpRatchetJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpRatchetJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpGearJoint.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpGearJoint.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSimpleMotor.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSimpleMotor.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpPolyShape.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpPolyShape.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpHashSet.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpHashSet.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpArray.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpArray.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpCollision.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpCollision.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpaceHash.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpaceHash.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpBBTree.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpBBTree.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpSpatialIndex.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpSpatialIndex.obj)' or at ''; linking object as if no debug info
-libchipmunk.lib(cpRobust.obj) : warning LNK4099: PDB '' was not found with 'libchipmunk.lib(cpRobust.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btAlignedAllocator.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-ext_recast.lib(fastlz.obj) : warning LNK4099: PDB '' was not found with 'ext_recast.lib(fastlz.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btAlignedAllocator.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btAlignedAllocator.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCollisionDispatcher.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCollisionDispatcher.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCollisionWorld.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCollisionWorld.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btDefaultCollisionConfiguration.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btDefaultCollisionConfiguration.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btDbvtBroadphase.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btDbvtBroadphase.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btDiscreteDynamicsWorld.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btDiscreteDynamicsWorld.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSequentialImpulseConstraintSolver.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSequentialImpulseConstraintSolver.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCollisionObject.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCollisionObject.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btRigidBody.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btRigidBody.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGhostObject.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGhostObject.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btDispatcher.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btDispatcher.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btPersistentManifold.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btPersistentManifold.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btManifoldResult.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btManifoldResult.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCollisionShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCollisionShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGjkEpaPenetrationDepthSolver.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGjkEpaPenetrationDepthSolver.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexInternalShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexInternalShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSphereShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSphereShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btTriangleCallback.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btTriangleCallback.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btBvhTriangleMeshShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btBvhTriangleMeshShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btRaycastCallback.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btRaycastCallback.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexCast.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexCast.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSubSimplexConvexCast.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSubSimplexConvexCast.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGjkConvexCast.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGjkConvexCast.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btContinuousConvexCollision.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btContinuousConvexCollision.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btQuickprof.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btQuickprof.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexConvexAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexConvexAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btEmptyCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btEmptyCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexConcaveCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexConcaveCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCompoundCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCompoundCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCompoundCompoundCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCompoundCompoundCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexPlaneCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexPlaneCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btBoxBoxCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btBoxBoxCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSphereSphereCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSphereSphereCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSphereTriangleCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSphereTriangleCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btMinkowskiPenetrationDepthSolver.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btMinkowskiPenetrationDepthSolver.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btDbvt.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btDbvt.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btOverlappingPairCache.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btOverlappingPairCache.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btSimulationIslandManager.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btSimulationIslandManager.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btTypedConstraint.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btTypedConstraint.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConeTwistConstraint.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConeTwistConstraint.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGeneric6DofConstraint.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGeneric6DofConstraint.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btVector3.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btVector3.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGjkEpa2.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGjkEpa2.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btTriangleMeshShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btTriangleMeshShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btQuantizedBvh.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btQuantizedBvh.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btOptimizedBvh.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btOptimizedBvh.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btPolyhedralConvexShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btPolyhedralConvexShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btVoronoiSimplexSolver.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btVoronoiSimplexSolver.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGjkPairDetector.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGjkPairDetector.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btActivatingCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btActivatingCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btPolyhedralContactClipping.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btPolyhedralContactClipping.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btHashedSimplePairCache.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btHashedSimplePairCache.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btBoxBoxDetector.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btBoxBoxDetector.obj)' or at ''; linking object as if no debug info
-libbullet.lib(SphereTriangleDetector.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(SphereTriangleDetector.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btUnionFind.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btUnionFind.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConcaveShape.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConcaveShape.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexPolyhedron.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexPolyhedron.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btConvexHullComputer.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btConvexHullComputer.obj)' or at ''; linking object as if no debug info
-libbullet.lib(btGeometryUtil.obj) : warning LNK4099: PDB '' was not found with 'libbullet.lib(btGeometryUtil.obj)' or at ''; linking object as if no debug info
-     Creating library S:/Game/proj.win32/Debug/Game.lib and object S:/Game/proj.win32/Debug/Game.exp
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  AppDelegate.cpp
+  main.cpp
+  UI.cpp
+libchipmunk.lib(cpArbiter.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpArbiter.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpBody.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpBody.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpace.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpace.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpaceQuery.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpaceQuery.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpaceStep.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpaceStep.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpaceDebug.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpaceDebug.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(chipmunk.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(chipmunk.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpaceComponent.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpaceComponent.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpConstraint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpConstraint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpPinJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpPinJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSlideJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSlideJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpPivotJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpPivotJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpGrooveJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpGrooveJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpDampedSpring.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpDampedSpring.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpDampedRotarySpring.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpDampedRotarySpring.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpRotaryLimitJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpRotaryLimitJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpRatchetJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpRatchetJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpGearJoint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpGearJoint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSimpleMotor.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSimpleMotor.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpPolyShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpPolyShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpHashSet.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpHashSet.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpArray.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpArray.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpCollision.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpCollision.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpaceHash.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpaceHash.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btAlignedAllocator.obj) : warning LNK4075: ' /EDITANDCONTINUE' ignoré à cause de la spécification '/SAFESEH'
+libchipmunk.lib(cpBBTree.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpBBTree.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpSpatialIndex.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpSpatialIndex.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libchipmunk.lib(cpRobust.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libchipmunk.lib(cpRobust.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btAlignedAllocator.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btAlignedAllocator.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCollisionDispatcher.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCollisionDispatcher.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCollisionWorld.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCollisionWorld.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btDefaultCollisionConfiguration.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btDefaultCollisionConfiguration.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btDbvtBroadphase.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btDbvtBroadphase.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btDiscreteDynamicsWorld.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btDiscreteDynamicsWorld.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSequentialImpulseConstraintSolver.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSequentialImpulseConstraintSolver.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCollisionObject.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCollisionObject.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btRigidBody.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btRigidBody.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGhostObject.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGhostObject.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btDispatcher.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btDispatcher.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btPersistentManifold.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btPersistentManifold.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btManifoldResult.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btManifoldResult.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCollisionShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCollisionShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGjkEpaPenetrationDepthSolver.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGjkEpaPenetrationDepthSolver.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexInternalShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexInternalShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSphereShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSphereShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btTriangleCallback.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btTriangleCallback.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btBvhTriangleMeshShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btBvhTriangleMeshShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btRaycastCallback.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btRaycastCallback.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexCast.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexCast.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSubSimplexConvexCast.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSubSimplexConvexCast.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGjkConvexCast.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGjkConvexCast.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btContinuousConvexCollision.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btContinuousConvexCollision.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btQuickprof.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btQuickprof.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexConvexAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexConvexAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btEmptyCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btEmptyCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexConcaveCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexConcaveCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCompoundCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCompoundCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCompoundCompoundCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCompoundCompoundCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexPlaneCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexPlaneCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btBoxBoxCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btBoxBoxCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSphereSphereCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSphereSphereCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSphereTriangleCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSphereTriangleCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btMinkowskiPenetrationDepthSolver.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btMinkowskiPenetrationDepthSolver.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btDbvt.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btDbvt.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btOverlappingPairCache.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btOverlappingPairCache.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btSimulationIslandManager.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btSimulationIslandManager.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btTypedConstraint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btTypedConstraint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConeTwistConstraint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConeTwistConstraint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGeneric6DofConstraint.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGeneric6DofConstraint.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btVector3.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btVector3.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGjkEpa2.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGjkEpa2.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btTriangleMeshShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btTriangleMeshShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btQuantizedBvh.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btQuantizedBvh.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btOptimizedBvh.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btOptimizedBvh.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btPolyhedralConvexShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btPolyhedralConvexShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btVoronoiSimplexSolver.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btVoronoiSimplexSolver.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGjkPairDetector.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGjkPairDetector.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btActivatingCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btActivatingCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btPolyhedralContactClipping.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btPolyhedralContactClipping.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btCollisionAlgorithm.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btCollisionAlgorithm.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btHashedSimplePairCache.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btHashedSimplePairCache.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btBoxBoxDetector.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btBoxBoxDetector.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(SphereTriangleDetector.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(SphereTriangleDetector.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btUnionFind.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btUnionFind.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConcaveShape.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConcaveShape.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexPolyhedron.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexPolyhedron.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btConvexHullComputer.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btConvexHullComputer.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+libbullet.lib(btGeometryUtil.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'libbullet.lib(btGeometryUtil.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+     Création de la bibliothèque S:/Game/proj.win32/Debug/Game.lib et de l'objet S:/Game/proj.win32/Debug/Game.exp
+LINK : warning LNK4098: conflit entre la bibliothèque par défaut 'LIBCMT' et les autres bibliothèques ; utilisez /NODEFAULTLIB:library
+LINK : warning LNK4098: conflit entre la bibliothèque par défaut 'MSVCRT' et les autres bibliothèques ; utilisez /NODEFAULTLIB:library
   Game.vcxproj -> S:\Game\proj.win32\bin\Game\Debug\Game.exe

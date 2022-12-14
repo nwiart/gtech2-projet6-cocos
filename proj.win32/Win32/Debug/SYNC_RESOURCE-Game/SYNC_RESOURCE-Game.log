@@ -1,2 +1,16 @@
 ﻿  Copying resources for Game ...
+  Building Custom Rule S:/Game/CMakeLists.txt
       copying to S:/Game/proj.win32/bin/Game/Debug/Resources
+  Le chemin d'accès spécifié est introuvable.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: La commande "setlocal
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: "C:\Program Files\CMake\bin\cmake.exe" -E echo "    copying to S:/Game/proj.win32/bin/Game/Debug/Resources"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: if %errorlevel% neq 0 goto :cmEnd
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: "C:\Program Files\Python27\python.exe" S:/Game/cocos2d/cmake/scripts/sync_folder.py -s S:/Game/Resources -d S:/Game/proj.win32/bin/Game/Debug/Resources
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: if %errorlevel% neq 0 goto :cmEnd
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: :cmEnd
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: :cmErrorLevel
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: exit /b %1
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: :cmDone
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: if %errorlevel% neq 0 goto :VCEnd
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: :VCEnd" s'est arrêtée avec le code 3.

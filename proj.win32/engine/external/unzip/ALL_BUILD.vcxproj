@@ -3,6 +3,9 @@
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -23,8 +26,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C1EED1F5-AA00-31CC-B788-A5301A2494B4}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>Win32</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -109,7 +112,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule S:/Game/cocos2d/external/unzip/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -122,7 +125,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule S:/Game/cocos2d/external/unzip/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -135,7 +138,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule S:/Game/cocos2d/external/unzip/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -148,7 +151,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule S:/Game/cocos2d/external/unzip/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/unzip/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

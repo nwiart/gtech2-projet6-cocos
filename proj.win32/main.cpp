@@ -25,18 +25,43 @@
 #include "main.h"
 #include "AppDelegate.h"
 #include "cocos2d.h"
+#include <iostream>
+#include "UI.h"
+
+#include "HelloWorldScene.h"
 
 USING_NS_CC;
 
+#define SHOW_CONSOLE
+
+#ifdef SHOW_CONSOLE
+int main()
+#else
 int WINAPI _tWinMain(HINSTANCE hInstance,
                        HINSTANCE hPrevInstance,
                        LPTSTR    lpCmdLine,
                        int       nCmdShow)
+#endif
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+    //UNREFERENCED_PARAMETER(hPrevInstance);
+    //UNREFERENCED_PARAMETER(lpCmdLine);
 
     // create the application instance
     AppDelegate app;
+
+    auto firstScene = Scene::create();
+    auto secondScene = Scene::create();
+    
+	
+    
+   
+
+    
+	
+	//staline->replaceScene(TransitionFade::create(2, secondScene, Color3B(0, 255, 255)));
+
+ //   std::cout << " --------------------------------------- Loaded Second Scene ------------------------------------------ " << std::endl;
+
+
     return Application::getInstance()->run();
 }

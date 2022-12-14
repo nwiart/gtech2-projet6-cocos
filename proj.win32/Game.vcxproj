@@ -23,8 +23,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{84DC64CD-5363-3ADF-9B75-925F49251D50}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>Win32</Platform>
     <ProjectName>Game</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -86,11 +86,13 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Disabled</Optimization>
@@ -115,9 +117,10 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/Debug/libssl-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/Debug/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -126,7 +129,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/Debug/libcrypto-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/Debug/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -135,7 +138,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/Debug/uv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/Debug/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -144,7 +147,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/Debug/websockets.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/Debug/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -153,7 +156,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/Debug/libcurl.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/Debug/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -162,7 +165,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/Debug/glew32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/Debug/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -171,7 +174,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/Debug/iconv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/Debug/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -180,7 +183,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/Debug/libmpg123.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/Debug/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -189,7 +192,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/Debug/libogg.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/Debug/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -198,7 +201,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/Debug/libvorbis.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/Debug/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -207,7 +210,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/Debug/libvorbisfile.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/Debug/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -216,7 +219,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/Debug/OpenAL32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/Debug/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,7 +228,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/Debug/zlib1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/Debug/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -235,14 +238,14 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\Debug\cocos2d.lib;lib\Debug\external.lib;..\cocos2d\external\Box2D\prebuilt\win32\debug\libbox2d.lib;..\cocos2d\external\chipmunk\prebuilt\win32\debug-lib\libchipmunk.lib;..\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\Debug\ext_recast.lib;..\cocos2d\external\bullet\prebuilt\win32\debug\libbullet.lib;..\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;..\cocos2d\external\webp\prebuilt\win32\libwebp.lib;..\cocos2d\external\websockets\prebuilt\win32\websockets.lib;..\cocos2d\external\openssl\prebuilt\win32\libssl.lib;..\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;..\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\Debug\ext_tinyxml2.lib;lib\Debug\ext_xxhash.lib;lib\Debug\ext_xxtea.lib;lib\Debug\ext_clipper.lib;lib\Debug\ext_edtaa3func.lib;lib\Debug\ext_convertUTF.lib;lib\Debug\ext_poly2tri.lib;lib\Debug\ext_md5.lib;..\cocos2d\external\curl\prebuilt\win32\libcurl.lib;..\cocos2d\external\png\prebuilt\win32\libpng.lib;..\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;..\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;..\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;..\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;..\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;..\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\Debug\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\Debug\cocos2d.lib;lib\Debug\external.lib;S:\Game\cocos2d\external\Box2D\prebuilt\win32\debug\libbox2d.lib;S:\Game\cocos2d\external\chipmunk\prebuilt\win32\debug-lib\libchipmunk.lib;S:\Game\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\Debug\ext_recast.lib;S:\Game\cocos2d\external\bullet\prebuilt\win32\debug\libbullet.lib;S:\Game\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;S:\Game\cocos2d\external\webp\prebuilt\win32\libwebp.lib;S:\Game\cocos2d\external\websockets\prebuilt\win32\websockets.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libssl.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;S:\Game\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\Debug\ext_tinyxml2.lib;lib\Debug\ext_xxhash.lib;lib\Debug\ext_xxtea.lib;lib\Debug\ext_clipper.lib;lib\Debug\ext_edtaa3func.lib;lib\Debug\ext_convertUTF.lib;lib\Debug\ext_poly2tri.lib;lib\Debug\ext_md5.lib;S:\Game\cocos2d\external\curl\prebuilt\win32\libcurl.lib;S:\Game\cocos2d\external\png\prebuilt\win32\libpng.lib;S:\Game\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;S:\Game\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;S:\Game\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;S:\Game\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;S:\Game\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\Debug\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>S:/Game/proj.win32/Debug/Game.lib</ImportLibrary>
       <ProgramDataBaseFile>S:/Game/proj.win32/bin/Game/Debug/Game.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -250,9 +253,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
@@ -279,9 +284,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/Release/libssl-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/Release/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -290,7 +296,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/Release/libcrypto-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/Release/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -299,7 +305,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/Release/uv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/Release/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -308,7 +314,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/Release/websockets.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/Release/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -317,7 +323,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/Release/libcurl.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/Release/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -326,7 +332,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/Release/glew32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/Release/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -335,7 +341,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/Release/iconv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/Release/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -344,7 +350,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/Release/libmpg123.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/Release/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -353,7 +359,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/Release/libogg.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/Release/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -362,7 +368,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/Release/libvorbis.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/Release/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -371,7 +377,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/Release/libvorbisfile.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/Release/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -380,7 +386,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/Release/OpenAL32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/Release/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -389,7 +395,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/Release/zlib1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/Release/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -399,14 +405,14 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\Release\cocos2d.lib;lib\Release\external.lib;..\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;..\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;..\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\Release\ext_recast.lib;..\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;..\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;..\cocos2d\external\webp\prebuilt\win32\libwebp.lib;..\cocos2d\external\websockets\prebuilt\win32\websockets.lib;..\cocos2d\external\openssl\prebuilt\win32\libssl.lib;..\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;..\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\Release\ext_tinyxml2.lib;lib\Release\ext_xxhash.lib;lib\Release\ext_xxtea.lib;lib\Release\ext_clipper.lib;lib\Release\ext_edtaa3func.lib;lib\Release\ext_convertUTF.lib;lib\Release\ext_poly2tri.lib;lib\Release\ext_md5.lib;..\cocos2d\external\curl\prebuilt\win32\libcurl.lib;..\cocos2d\external\png\prebuilt\win32\libpng.lib;..\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;..\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;..\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;..\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;..\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;..\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\Release\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\Release\cocos2d.lib;lib\Release\external.lib;S:\Game\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;S:\Game\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;S:\Game\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\Release\ext_recast.lib;S:\Game\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;S:\Game\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;S:\Game\cocos2d\external\webp\prebuilt\win32\libwebp.lib;S:\Game\cocos2d\external\websockets\prebuilt\win32\websockets.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libssl.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;S:\Game\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\Release\ext_tinyxml2.lib;lib\Release\ext_xxhash.lib;lib\Release\ext_xxtea.lib;lib\Release\ext_clipper.lib;lib\Release\ext_edtaa3func.lib;lib\Release\ext_convertUTF.lib;lib\Release\ext_poly2tri.lib;lib\Release\ext_md5.lib;S:\Game\cocos2d\external\curl\prebuilt\win32\libcurl.lib;S:\Game\cocos2d\external\png\prebuilt\win32\libpng.lib;S:\Game\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;S:\Game\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;S:\Game\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;S:\Game\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;S:\Game\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\Release\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>S:/Game/proj.win32/Release/Game.lib</ImportLibrary>
       <ProgramDataBaseFile>S:/Game/proj.win32/bin/Game/Release/Game.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -414,9 +420,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MinSpace</Optimization>
@@ -443,9 +451,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libssl-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -454,7 +463,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libcrypto-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -463,7 +472,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/MinSizeRel/uv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/MinSizeRel/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -472,7 +481,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/MinSizeRel/websockets.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/MinSizeRel/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -481,7 +490,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libcurl.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -490,7 +499,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/MinSizeRel/glew32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/MinSizeRel/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -499,7 +508,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/MinSizeRel/iconv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/MinSizeRel/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -508,7 +517,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libmpg123.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -517,7 +526,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libogg.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -526,7 +535,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libvorbis.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -535,7 +544,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libvorbisfile.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/MinSizeRel/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -544,7 +553,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/MinSizeRel/OpenAL32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/MinSizeRel/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -553,7 +562,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/zlib1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/MinSizeRel/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -563,14 +572,14 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\MinSizeRel\cocos2d.lib;lib\MinSizeRel\external.lib;..\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;..\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;..\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\MinSizeRel\ext_recast.lib;..\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;..\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;..\cocos2d\external\webp\prebuilt\win32\libwebp.lib;..\cocos2d\external\websockets\prebuilt\win32\websockets.lib;..\cocos2d\external\openssl\prebuilt\win32\libssl.lib;..\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;..\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\MinSizeRel\ext_tinyxml2.lib;lib\MinSizeRel\ext_xxhash.lib;lib\MinSizeRel\ext_xxtea.lib;lib\MinSizeRel\ext_clipper.lib;lib\MinSizeRel\ext_edtaa3func.lib;lib\MinSizeRel\ext_convertUTF.lib;lib\MinSizeRel\ext_poly2tri.lib;lib\MinSizeRel\ext_md5.lib;..\cocos2d\external\curl\prebuilt\win32\libcurl.lib;..\cocos2d\external\png\prebuilt\win32\libpng.lib;..\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;..\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;..\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;..\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;..\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;..\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\MinSizeRel\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\MinSizeRel\cocos2d.lib;lib\MinSizeRel\external.lib;S:\Game\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;S:\Game\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;S:\Game\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\MinSizeRel\ext_recast.lib;S:\Game\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;S:\Game\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;S:\Game\cocos2d\external\webp\prebuilt\win32\libwebp.lib;S:\Game\cocos2d\external\websockets\prebuilt\win32\websockets.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libssl.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;S:\Game\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\MinSizeRel\ext_tinyxml2.lib;lib\MinSizeRel\ext_xxhash.lib;lib\MinSizeRel\ext_xxtea.lib;lib\MinSizeRel\ext_clipper.lib;lib\MinSizeRel\ext_edtaa3func.lib;lib\MinSizeRel\ext_convertUTF.lib;lib\MinSizeRel\ext_poly2tri.lib;lib\MinSizeRel\ext_md5.lib;S:\Game\cocos2d\external\curl\prebuilt\win32\libcurl.lib;S:\Game\cocos2d\external\png\prebuilt\win32\libpng.lib;S:\Game\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;S:\Game\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;S:\Game\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;S:\Game\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;S:\Game\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\MinSizeRel\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>S:/Game/proj.win32/MinSizeRel/Game.lib</ImportLibrary>
       <ProgramDataBaseFile>S:/Game/proj.win32/bin/Game/MinSizeRel/Game.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -578,10 +587,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\Classes;S:\Game\cocos2d\cocos\audio\include;S:\Game\cocos2d;S:\Game\cocos2d\cocos;S:\Game\cocos2d\extensions;S:\Game\cocos2d\cocos\platform;S:\Game\cocos2d\cocos\editor-support;S:\Game\cocos2d\cocos\base;S:\Game\cocos2d\cocos\platform\win32;S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
@@ -606,9 +617,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libssl-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -617,7 +629,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libcrypto-1_1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -626,7 +638,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/uv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/uv/prebuilt/win32/uv.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -635,7 +647,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/websockets.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/websockets/prebuilt/win32/websockets.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -644,7 +656,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libcurl.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/curl/prebuilt/win32/libcurl.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -653,7 +665,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/glew32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -662,7 +674,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/iconv.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -671,7 +683,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libmpg123.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -680,7 +692,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libogg.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -689,7 +701,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libvorbis.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -698,7 +710,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libvorbisfile.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -707,7 +719,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/OpenAL32.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -716,7 +728,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-D:\Programmes\cmake\bin\cmake.exe -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/zlib1.dll
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different S:/Game/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll S:/Game/proj.win32/bin/Game/RelWithDebInfo/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -726,14 +738,14 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\RelWithDebInfo\cocos2d.lib;lib\RelWithDebInfo\external.lib;..\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;..\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;..\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\RelWithDebInfo\ext_recast.lib;..\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;..\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;..\cocos2d\external\webp\prebuilt\win32\libwebp.lib;..\cocos2d\external\websockets\prebuilt\win32\websockets.lib;..\cocos2d\external\openssl\prebuilt\win32\libssl.lib;..\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;..\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\RelWithDebInfo\ext_tinyxml2.lib;lib\RelWithDebInfo\ext_xxhash.lib;lib\RelWithDebInfo\ext_xxtea.lib;lib\RelWithDebInfo\ext_clipper.lib;lib\RelWithDebInfo\ext_edtaa3func.lib;lib\RelWithDebInfo\ext_convertUTF.lib;lib\RelWithDebInfo\ext_poly2tri.lib;lib\RelWithDebInfo\ext_md5.lib;..\cocos2d\external\curl\prebuilt\win32\libcurl.lib;..\cocos2d\external\png\prebuilt\win32\libpng.lib;..\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;..\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;..\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;..\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;..\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;..\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;..\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\RelWithDebInfo\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\RelWithDebInfo\cocos2d.lib;lib\RelWithDebInfo\external.lib;S:\Game\cocos2d\external\Box2D\prebuilt\win32\release\libbox2d.lib;S:\Game\cocos2d\external\chipmunk\prebuilt\win32\release-lib\libchipmunk.lib;S:\Game\cocos2d\external\freetype2\prebuilt\win32\freetype.lib;lib\RelWithDebInfo\ext_recast.lib;S:\Game\cocos2d\external\bullet\prebuilt\win32\release\libbullet.lib;S:\Game\cocos2d\external\jpeg\prebuilt\win32\libjpeg.lib;S:\Game\cocos2d\external\webp\prebuilt\win32\libwebp.lib;S:\Game\cocos2d\external\websockets\prebuilt\win32\websockets.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libssl.lib;S:\Game\cocos2d\external\openssl\prebuilt\win32\libcrypto.lib;S:\Game\cocos2d\external\uv\prebuilt\win32\uv_a.lib;lib\RelWithDebInfo\ext_tinyxml2.lib;lib\RelWithDebInfo\ext_xxhash.lib;lib\RelWithDebInfo\ext_xxtea.lib;lib\RelWithDebInfo\ext_clipper.lib;lib\RelWithDebInfo\ext_edtaa3func.lib;lib\RelWithDebInfo\ext_convertUTF.lib;lib\RelWithDebInfo\ext_poly2tri.lib;lib\RelWithDebInfo\ext_md5.lib;S:\Game\cocos2d\external\curl\prebuilt\win32\libcurl.lib;S:\Game\cocos2d\external\png\prebuilt\win32\libpng.lib;S:\Game\cocos2d\external\win32-specific\gles\prebuilt\glew32.lib;S:\Game\cocos2d\external\win32-specific\icon\prebuilt\libiconv.lib;S:\Game\cocos2d\external\win32-specific\MP3Decoder\prebuilt\libmpg123.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libogg.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbis.lib;S:\Game\cocos2d\external\win32-specific\OggDecoder\prebuilt\libvorbisfile.lib;S:\Game\cocos2d\external\win32-specific\OpenalSoft\prebuilt\OpenAL32.lib;S:\Game\cocos2d\external\glfw3\prebuilt\win32\glfw3.lib;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\prebuilt\libzlib.lib;lib\RelWithDebInfo\ext_unzip.lib;ws2_32.lib;userenv.lib;psapi.lib;winmm.lib;Version.lib;Iphlpapi.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>S:/Game/proj.win32/RelWithDebInfo/Game.lib</ImportLibrary>
       <ProgramDataBaseFile>S:/Game/proj.win32/bin/Game/RelWithDebInfo/Game.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -744,7 +756,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -752,12 +764,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompilerABI.c;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompilerABI.cpp;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCompilerIdDetection.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompileFeatures.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerABI.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerId.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeFindBinUtils.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseLibraryArchitecture.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystem.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCompilerCommon.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CompilerId\VS-10.vcxproj.in;D:\Programmes\cmake\share\cmake-3.22\Modules\Internal\FeatureTesting.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-Determine-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">S:\Game\proj.win32\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -765,12 +777,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompilerABI.c;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompilerABI.cpp;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCompilerIdDetection.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompileFeatures.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerABI.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerId.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeFindBinUtils.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseLibraryArchitecture.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystem.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCompilerCommon.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CompilerId\VS-10.vcxproj.in;D:\Programmes\cmake\share\cmake-3.22\Modules\Internal\FeatureTesting.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-Determine-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">S:\Game\proj.win32\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -778,12 +790,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompilerABI.c;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompilerABI.cpp;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCompilerIdDetection.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompileFeatures.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerABI.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerId.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeFindBinUtils.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseLibraryArchitecture.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystem.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCompilerCommon.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CompilerId\VS-10.vcxproj.in;D:\Programmes\cmake\share\cmake-3.22\Modules\Internal\FeatureTesting.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-Determine-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">S:\Game\proj.win32\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule S:/Game/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -791,12 +803,13 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCCompilerABI.c;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXCompilerABI.cpp;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeCompilerIdDetection.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompileFeatures.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerABI.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineCompilerId.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeDetermineSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeFindBinUtils.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeParseLibraryArchitecture.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCCompiler.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystem.cmake.in;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCXXCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestCompilerCommon.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CMakeTestRCCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\CompilerId\VS-10.vcxproj.in;D:\Programmes\cmake\share\cmake-3.22\Modules\Internal\FeatureTesting.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-Determine-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\Windows.cmake;D:\Programmes\cmake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.22.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;S:\Game\cocos2d\cmake\Modules\CocosBuildSet.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDefine.cmake;S:\Game\cocos2d\cmake\Modules\CocosConfigDepend.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;S:\Game\proj.win32\CMakeFiles\3.25.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">S:\Game\proj.win32\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UI.cpp" />
     <ClInclude Include="S:\Game\Classes\AppDelegate.h" />
     <ClInclude Include="S:\Game\Classes\HelloWorldScene.h" />
     <ClInclude Include="S:\Game\proj.win32\main.h" />
@@ -804,6 +817,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="S:\Game\Classes\AppDelegate.cpp" />
     <ClCompile Include="S:\Game\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="S:\Game\proj.win32\main.cpp" />
+    <ClInclude Include="UI.h" />
     <ResourceCompile Include="S:\Game\proj.win32\game.rc" />
     <ClInclude Include="S:\Game\Resources\CloseNormal.png" />
     <ClInclude Include="S:\Game\Resources\CloseSelected.png" />
@@ -817,12 +831,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="S:\Game\proj.win32\ZERO_CHECK.vcxproj">
       <Project>{D854149F-167D-3FCC-98D8-6A4F583575D7}</Project>
       <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="S:\Game\proj.win32\SYNC_RESOURCE-Game.vcxproj">
-      <Project>{AE8BA1CE-FB28-35F4-9AB0-8BFD4F7BDBA0}</Project>
-      <Name>SYNC_RESOURCE-Game</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>

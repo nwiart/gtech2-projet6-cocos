@@ -23,8 +23,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1F065A48-8AF5-3EF0-BF86-94CBCCFE80D5}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>Win32</Platform>
     <ProjectName>external</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -78,11 +78,13 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -111,9 +113,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -144,9 +148,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -177,10 +183,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;S:\Game\cocos2d\external\Box2D\include;S:\Game\cocos2d\external\chipmunk\include;S:\Game\cocos2d\external\freetype2\include\win32\freetype2;S:\Game\cocos2d\external\bullet\include;S:\Game\cocos2d\external\bullet\include\bullet;S:\Game\cocos2d\external\jpeg\include\win32;S:\Game\cocos2d\external\openssl\include\win32;S:\Game\cocos2d\external\uv\include;S:\Game\cocos2d\external\webp\include\win32;S:\Game\cocos2d\external\websockets\include\win32;S:\Game\cocos2d\external\curl\include\win32;S:\Game\cocos2d\external\png\include\win32;S:\Game\cocos2d\external\win32-specific\gles\include\OGLES;S:\Game\cocos2d\external\win32-specific\icon\include;S:\Game\cocos2d\external\win32-specific\MP3Decoder\include;S:\Game\cocos2d\external\win32-specific\OggDecoder\include;S:\Game\cocos2d\external\win32-specific\OpenalSoft\include;S:\Game\cocos2d\external\glfw3\include\win32;S:\Game\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\Game\cocos2d\external\recast\..;S:\Game\cocos2d\external\tinyxml2\.;S:\Game\cocos2d\external\xxhash\.;S:\Game\cocos2d\external\xxtea\.;S:\Game\cocos2d\external\clipper\.;S:\Game\cocos2d\external\edtaa3func\.;S:\Game\cocos2d\external\ConvertUTF\.;S:\Game\cocos2d\external\poly2tri\..;S:\Game\cocos2d\external\md5\..;S:\Game\cocos2d\external\unzip\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "S:/Game/cocos2d/external/Box2D/include" /external:I "S:/Game/cocos2d/external/chipmunk/include" /external:I "S:/Game/cocos2d/external/freetype2/include/win32/freetype2" /external:I "S:/Game/cocos2d/external/bullet/include" /external:I "S:/Game/cocos2d/external/bullet/include/bullet" /external:I "S:/Game/cocos2d/external/jpeg/include/win32" /external:I "S:/Game/cocos2d/external/openssl/include/win32" /external:I "S:/Game/cocos2d/external/uv/include" /external:I "S:/Game/cocos2d/external/webp/include/win32" /external:I "S:/Game/cocos2d/external/websockets/include/win32" /external:I "S:/Game/cocos2d/external/curl/include/win32" /external:I "S:/Game/cocos2d/external/png/include/win32" /external:I "S:/Game/cocos2d/external/win32-specific/gles/include/OGLES" /external:I "S:/Game/cocos2d/external/win32-specific/icon/include" /external:I "S:/Game/cocos2d/external/win32-specific/MP3Decoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OggDecoder/include" /external:I "S:/Game/cocos2d/external/win32-specific/OpenalSoft/include" /external:I "S:/Game/cocos2d/external/glfw3/include/win32" /external:I "S:/Game/cocos2d/external/zlib/../win32-specific/zlib/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -212,7 +220,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule S:/Game/cocos2d/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,7 +233,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule S:/Game/cocos2d/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,7 +246,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule S:/Game/cocos2d/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,7 +259,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule S:/Game/cocos2d/external/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-D:\Programmes\cmake\bin\cmake.exe -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SS:/Game -BS:/Game/proj.win32 --check-stamp-file S:/Game/proj.win32/engine/external/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone

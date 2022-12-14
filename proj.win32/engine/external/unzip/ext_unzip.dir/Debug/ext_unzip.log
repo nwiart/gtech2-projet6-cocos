@@ -8,5 +8,5 @@ S:\Game\cocos2d\external\unzip\ioapi.cpp(186,5): warning C4996: 'strncpy': This 
 S:\Game\cocos2d\external\unzip\ioapi.cpp(191,9): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   unzip.cpp
   ioapi_mem.cpp
-  Generating Code...
+  Génération de code en cours...
   ext_unzip.vcxproj -> S:\Game\proj.win32\lib\Debug\ext_unzip.lib

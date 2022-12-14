@@ -13,6 +13,9 @@
     <ClCompile Include="S:\Game\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\proj.win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="S:\Game\Classes\AppDelegate.h">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="S:\Game\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Source Files\proj.win32</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

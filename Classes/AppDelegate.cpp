@@ -25,6 +25,8 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
+#include "../proj.win32/UI.h"
+
 // #define USE_AUDIO_ENGINE 1
 
 #if USE_AUDIO_ENGINE
@@ -107,11 +109,18 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
+    auto staline = Director::getInstance();
+
+    TitleMenu* titleMenu = TitleMenu::createScene();
+
+    titleMenu->init();
+    staline->runWithScene(titleMenu);
+
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    //auto scene = HelloWorld::createScene();
 
     // run
-    director->runWithScene(scene);
+    //director->runWithScene(scene);
 
     return true;
 }
