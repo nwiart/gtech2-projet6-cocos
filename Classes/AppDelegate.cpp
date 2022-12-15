@@ -25,7 +25,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-#include "../proj.win32/UI.h"
+#include "UI.h"
 
 // #define USE_AUDIO_ENGINE 1
 

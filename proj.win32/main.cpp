@@ -32,7 +32,7 @@
 
 USING_NS_CC;
 
-#define SHOW_CONSOLE
+//#define SHOW_CONSOLE
 
 #ifdef SHOW_CONSOLE
 int main()
@@ -52,6 +52,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
     auto firstScene = Scene::create();
     auto secondScene = Scene::create();
     
+
 	
     
    
