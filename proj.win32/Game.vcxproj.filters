@@ -54,14 +54,20 @@
     <ClInclude Include="S:\Game\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UI.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Lemmings\Lemming.h">
       <Filter>Source Files\Classes\Lemmings</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Lemmings\Animation\SpriteAnimations.h">
       <Filter>Source Files\Classes\Lemmings\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\SettingsScene.h">
+      <Filter>Source Files\Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\TitleMenuScene.h">
+      <Filter>Source Files\Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\GameScene.h">
+      <Filter>Source Files\Classes\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +102,9 @@
     </Filter>
     <Filter Include="Source Files\Classes\Lemmings\Animation">
       <UniqueIdentifier>{d0084d8a-33bc-4c1f-8051-58c0c39b5f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Scenes">
+      <UniqueIdentifier>{0784ee5f-3b2f-497e-a7e7-578dc456bfdc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

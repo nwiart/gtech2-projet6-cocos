@@ -13,6 +13,7 @@ public:
 	static TitleMenu* createScene();
 	virtual bool init();
 
+	void launchGame(Ref* pSender);
 
 	void changeToGameScene(Ref* pSender);
 	void changeToSettingsScene(Ref* pSender);

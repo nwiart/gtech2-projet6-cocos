@@ -1,4 +1,4 @@
-#include "UI.h"
+#include "Scenes/TitleMenuScene.h"
 #include "cocos2d.h"
 
 #include "Lemmings/Lemming.h"
@@ -19,10 +19,10 @@ TitleMenu::~TitleMenu()
 
 }
 
-void TitleMenu::changeScene(Scene* pSender)
-{
-	Director::getInstance()->pushScene(TransitionFade::create(0.5, pSender));
-}
+//void TitleMenu::changeToGameScene(Ref* pSender)
+//{
+//	Director::getInstance()->pushScene(TransitionFade::create(0.5, pSender));
+//}
 
 bool TitleMenu::init()
 {

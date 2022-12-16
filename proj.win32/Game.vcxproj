@@ -811,7 +811,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\Classes\Lemmings\Animation\SpriteAnimations.h" />
     <ClInclude Include="..\Classes\Lemmings\Lemming.h" />
-    <ClInclude Include="..\Classes\UI.h" />
+    <ClInclude Include="..\Classes\Scenes\GameScene.h" />
+    <ClInclude Include="..\Classes\Scenes\SettingsScene.h" />
+    <ClInclude Include="..\Classes\Scenes\TitleMenuScene.h" />
     <ClInclude Include="S:\Game\Classes\AppDelegate.h" />
     <ClInclude Include="S:\Game\Classes\HelloWorldScene.h" />
     <ClInclude Include="S:\Game\proj.win32\main.h" />
