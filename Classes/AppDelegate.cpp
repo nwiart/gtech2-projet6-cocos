@@ -26,6 +26,7 @@
 #include "HelloWorldScene.h"
 
 #include "Scenes/TitleMenuScene.h"
+#include "Scenes/GameScene.h"
 
 
 // #define USE_AUDIO_ENGINE 1
@@ -37,7 +38,7 @@ using namespace cocos2d::experimental;
 
 USING_NS_CC;
 
-static Size designResolutionSize = Size(1920, 1080);
+static Size designResolutionSize = Size(1024, 768);
 static Size smallResolutionSize = Size(480, 320);
 static Size mediumResolutionSize = Size(1024, 768);
 static Size largeResolutionSize = Size(2048, 1536);
@@ -85,6 +86,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // turn on display FPS
     director->setDisplayStats(true);
+    
+    // Disable VSync (WINDOWS ONLY).
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+    // Turn on vertical screen sync under Windows.
+    // (I.e. it uses the WGL_EXT_swap_control extension)
+    typedef BOOL(WINAPI* PFNWGLSWAPINTERVALEXTPROC)(int interval);
+    PFNWGLSWAPINTERVALEXTPROC wglSwapIntervalEXT = NULL;
+    wglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)wglGetProcAddress("wglSwapIntervalEXT");
+    if (wglSwapIntervalEXT)
+        wglSwapIntervalEXT(0);
+#endif
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
@@ -110,12 +122,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
-    Director* staline = Director::getInstance();
-
-    TitleMenu* titleMenu = TitleMenu::createScene();
+    //TitleMenu* titleMenu = TitleMenu::createScene();
+    GameScene* titleMenu = GameScene::createScene();
     
     //titleMenu->init();
-    staline->runWithScene(titleMenu);
+    director->runWithScene(titleMenu);
     
     // create a scene. it's an autorelease object
     //auto scene = HelloWorld::createScene();

@@ -13,10 +13,7 @@ public:
 	static TitleMenu* createScene();
 	virtual bool init();
 
-<<<<<<< HEAD
 	void launchGame(Ref* pSender);
-=======
->>>>>>> 1bf4bb53c33835cb5f652e345494a4ac4001ee47
 
 	void changeToGameScene(Ref* pSender);
 	void changeToSettingsScene(Ref* pSender);
@@ -24,11 +21,6 @@ public:
 	
 	void changeScene(Ref* pSender);
 
-<<<<<<< HEAD
-	
-=======
-	void launchGame(Ref* pSender);
->>>>>>> 1bf4bb53c33835cb5f652e345494a4ac4001ee47
 	void menuCloseCallback(Ref* pSender);
 
 	void exitScene(Ref* pSender);
