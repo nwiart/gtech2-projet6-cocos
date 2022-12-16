@@ -26,7 +26,7 @@
 #include "AppDelegate.h"
 #include "cocos2d.h"
 #include <iostream>
-#include "UI.h"
+
 
 #include "HelloWorldScene.h"
 
@@ -49,18 +49,6 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
     // create the application instance
     AppDelegate app;
 
-    auto firstScene = Scene::create();
-    auto secondScene = Scene::create();
-    
-	
-    
-   
-
-    
-	
-	//staline->replaceScene(TransitionFade::create(2, secondScene, Color3B(0, 255, 255)));
-
- //   std::cout << " --------------------------------------- Loaded Second Scene ------------------------------------------ " << std::endl;
 
 
     return Application::getInstance()->run();
