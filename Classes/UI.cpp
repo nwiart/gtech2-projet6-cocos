@@ -50,7 +50,7 @@ bool TitleMenu::init()
 
 
 	Lemming* l = Lemming::create();
-	//l->runAction(RepeatForever::create(s.anim_falling));
+	l->runAction(s.anim_umbrellafloat);
 	l->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 	l->setScale(10);
 	this->addChild(l, 1);

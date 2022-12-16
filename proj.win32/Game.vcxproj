@@ -245,7 +245,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>S:/Game/proj.win32/Debug/Game.lib</ImportLibrary>
       <ProgramDataBaseFile>S:/Game/proj.win32/bin/Game/Debug/Game.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -809,15 +809,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="UI.cpp" />
+    <ClInclude Include="..\Classes\Lemmings\Animation\SpriteAnimations.h" />
+    <ClInclude Include="..\Classes\Lemmings\Lemming.h" />
+    <ClInclude Include="..\Classes\UI.h" />
     <ClInclude Include="S:\Game\Classes\AppDelegate.h" />
     <ClInclude Include="S:\Game\Classes\HelloWorldScene.h" />
     <ClInclude Include="S:\Game\proj.win32\main.h" />
     <ClInclude Include="S:\Game\proj.win32\resource.h" />
+    <ClCompile Include="..\Classes\Lemmings\Animation\SpriteAnimations.cpp" />
+    <ClCompile Include="..\Classes\Lemmings\Lemming.cpp" />
+    <ClCompile Include="..\Classes\UI.cpp" />
     <ClCompile Include="S:\Game\Classes\AppDelegate.cpp" />
     <ClCompile Include="S:\Game\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="S:\Game\proj.win32\main.cpp" />
-    <ClInclude Include="UI.h" />
     <ResourceCompile Include="S:\Game\proj.win32\game.rc" />
     <ClInclude Include="S:\Game\Resources\CloseNormal.png" />
     <ClInclude Include="S:\Game\Resources\CloseSelected.png" />

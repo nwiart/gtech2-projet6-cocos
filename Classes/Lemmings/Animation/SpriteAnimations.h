@@ -22,12 +22,15 @@ public:
 public:
 
 	cocos2d::Action* anim_walk;
+	cocos2d::Action* anim_basher;
 	cocos2d::Action* anim_blocker;
 	cocos2d::Action* anim_bomber;
 	cocos2d::Action* anim_digger;
 	cocos2d::Action* anim_drowning;
 	cocos2d::Action* anim_exit;
 	cocos2d::Action* anim_falling;
-	cocos2d::Action* anim_jump;
-	cocos2d::Action* anim_umbrella;
+	cocos2d::Action* anim_stunned;
+	cocos2d::Action* anim_umbrelladeploy;
+	cocos2d::Action* anim_umbrellafloat;
+
 };

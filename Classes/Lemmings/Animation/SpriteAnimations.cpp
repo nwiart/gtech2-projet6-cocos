@@ -20,6 +20,20 @@ SpriteAnimations::SpriteAnimations()
 		anim_walk = RepeatForever::create(Animate::create(a));
 	}
 
+	// Basher.
+	frames.clear();
+	frames.reserve(32);
+	{
+		for (int j = 0; j < 2; ++j) {
+			for (int i = 0; i < 16; ++i) {
+				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (j + 6) * 20, 20, 20)));
+			}
+		}
+
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.025F);
+		anim_basher = RepeatForever::create(Animate::create(a));
+	}
+
 	// Blocker.
 	frames.clear();
 	frames.reserve(16);
@@ -32,17 +46,29 @@ SpriteAnimations::SpriteAnimations()
 		anim_blocker = RepeatForever::create(Animate::create(a));
 	}
 
-	// Digger.
+	// Bomber.
 	frames.clear();
-	frames.reserve(32);
+	frames.reserve(16);
 	{
 		for (int j = 0; j < 2; ++j) {
 			for (int i = 0; i < 16; ++i) {
-				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (j + 6) * 20, 20, 20)));
+				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (j + 10) * 20, 20, 20)));
 			}
 		}
 
-		Animation* a = Animation::createWithSpriteFrames(frames, 0.025F);
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
+		anim_bomber = Animate::create(a);
+	}
+
+	// Digger.
+	frames.clear();
+	frames.reserve(8);
+	{
+		for (int i = 0; i < 8; ++i) {
+			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (8) * 20, 20, 20)));
+		}
+
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
 		anim_digger = RepeatForever::create(Animate::create(a));
 	}
 
@@ -55,7 +81,7 @@ SpriteAnimations::SpriteAnimations()
 		}
 
 		Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
-		anim_drowning = Animate::create(a);
+		anim_drowning = RepeatForever::create(Animate::create(a));
 	}
 
 	// Exit.
@@ -86,12 +112,27 @@ SpriteAnimations::SpriteAnimations()
 	frames.clear();
 	frames.reserve(8);
 	{
-		for (int i = 0; i < 8; ++i) {
+		for (int i = 0; i < 4; ++i) {
 			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 4) * 20, (2) * 20, 20, 20)));
 		}
 
 		Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
-		anim_umbrella = Animate::create(a);
+		anim_umbrelladeploy = Animate::create(a);
+	}
+
+	// Umbrella float.
+	frames.clear();
+	frames.reserve(8);
+	{
+		for (int i = 0; i < 4; ++i) {
+			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 8) * 20, (2) * 20, 20, 20)));
+		}
+		for (int i = 0; i > -4; --i) {
+			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 11) * 20, (2) * 20, 20, 20)));
+		}
+
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
+		anim_umbrellafloat = RepeatForever::create(Animate::create(a));
 	}
 }
 
@@ -101,16 +142,16 @@ void SpriteAnimations::playOn(Lemming* l, int state)
 
 	switch (state) {
 	case Lemming::STATE_WALK:            a = anim_walk;     break;
+	case Lemming::STATE_BASHER:          a = anim_basher;     break;
 	case Lemming::STATE_BLOCKER:         a = anim_blocker;  break;
 	case Lemming::STATE_BOMBER:          a = anim_bomber;   break;
 	case Lemming::STATE_DIGGER:          a = anim_digger;   break;
 	case Lemming::STATE_DROWNING:        a = anim_drowning; break;
 	case Lemming::STATE_EXIT:            a = anim_exit;     break;
 	case Lemming::STATE_FALLING:         a = anim_falling;  break;
-	case Lemming::STATE_JUMP:            a = anim_jump;     break;
-	/*case Lemming::STATE_STUNED:          a = anim_stuned;  break;
+	case Lemming::STATE_STUNNED:         a = anim_stunned;  break;
 	case Lemming::STATE_UMBRELLA_DEPLOY: a = anim_umbrelladeploy; break;
-	case Lemming::STATE_UMBRELLA_FLOAT:  a = anim_umbrellafloat;  break;*/
+	case Lemming::STATE_UMBRELLA_FLOAT:  a = anim_umbrellafloat;  break;
 	}
 
 	l->runAction(a);
