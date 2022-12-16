@@ -801,20 +801,21 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Animation\SpriteAnimations.h" />
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Lemming.h" />
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\GameScene.h" />
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\SettingsScene.h" />
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\TitleMenuScene.h" />
-    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\UI.h" />
+    <ClInclude Include="S:\Game\Classes\Lemmings\Animation\SpriteAnimations.h" />
+    <ClInclude Include="S:\Game\Classes\Lemmings\Lemming.h" />
+    <ClInclude Include="S:\Game\Classes\Scenes\GameScene.h" />
+    <ClInclude Include="S:\Game\Classes\Scenes\SettingsScene.h" />
+    <ClInclude Include="S:\Game\Classes\Scenes\TitleMenuScene.h" />
+    <ClInclude Include="S:\Game\Classes\UI.h" />
     <ClInclude Include="S:\Game\Classes\AppDelegate.h" />
     <ClInclude Include="S:\Game\Classes\HelloWorldScene.h" />
     <ClInclude Include="S:\Game\proj.win32\main.h" />
     <ClInclude Include="S:\Game\proj.win32\resource.h" />
-    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Animation\SpriteAnimations.cpp" />
-    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Lemming.cpp" />
-    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\GameScene.cpp" />
-    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\UI.cpp" />
+
+    <ClCompile Include="S:\Game\Classes\Lemmings\Animation\SpriteAnimations.cpp" />
+    <ClCompile Include="S:\Game\Classes\Lemmings\Lemming.cpp" />
+    <ClCompile Include="S:\Game\Classes\Scenes\GameScene.cpp" />
+    <ClCompile Include="S:\Game\Classes\UI.cpp" />
     <ClCompile Include="S:\Game\Classes\AppDelegate.cpp" />
     <ClCompile Include="S:\Game\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="S:\Game\proj.win32\main.cpp" />
