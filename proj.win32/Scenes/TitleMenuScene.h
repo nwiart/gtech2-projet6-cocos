@@ -7,15 +7,27 @@ class TitleMenu : public cocos2d::Scene
 
 public:
     TitleMenu(/* args */);
+	~TitleMenu();
+
+	
 	static TitleMenu* createScene();
 	virtual bool init();
 
+
+	void changeToGameScene(Ref* pSender);
+	void changeToSettingsScene(Ref* pSender);
+	
+	
 	void changeScene(Ref* pSender);
+
+	
 	void menuCloseCallback(Ref* pSender);
-	void changeScene(Scene* pSender);
+
+	void exitScene(Ref* pSender);
+
 	
 	
-	~TitleMenu();
+	
 
 	CREATE_FUNC(TitleMenu);
 
@@ -23,9 +35,9 @@ public:
 	Scene* GameScene;
 	Scene* SettingsScene;
 
-private: /* data */
+private: 
 
-//std::vector<MenuItem*> MenuItems;
+
 
 
 

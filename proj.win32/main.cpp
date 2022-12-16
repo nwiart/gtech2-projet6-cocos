@@ -26,7 +26,7 @@
 #include "AppDelegate.h"
 #include "cocos2d.h"
 #include <iostream>
-#include "UI.h"
+
 
 #include "HelloWorldScene.h"
 
