@@ -5,8 +5,14 @@
 class GameScene : public cocos2d::Scene
 {
 public:
+
+    static GameScene* createScene() { return GameScene::create(); }
+
+
     GameScene(/* args */);
     ~GameScene();
+
+    virtual bool init() override;
 
     void menuCloseCallback(Ref *pSender);
     void exitScene(Ref *pSender);
@@ -14,4 +20,7 @@ public:
     CREATE_FUNC(GameScene);
 
 private:
+
+
+    cocos2d::Sprite* m_cursorSprite;
 };

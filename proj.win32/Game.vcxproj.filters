@@ -13,8 +13,17 @@
     <ClCompile Include="S:\Game\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>Source Files\proj.win32</Filter>
+    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Lemming.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Animation\SpriteAnimations.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\UI.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\GameScene.cpp">
+      <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -48,8 +57,23 @@
     <ClInclude Include="S:\Game\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>Source Files\proj.win32</Filter>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Lemming.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Lemmings\Animation\SpriteAnimations.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\UI.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\TitleMenuScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\GameScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dave\Desktop\Gaming Campus\TECH 2\Projet 6\drive\Game\Classes\Scenes\SettingsScene.h">
+      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
