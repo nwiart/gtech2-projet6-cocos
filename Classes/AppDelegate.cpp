@@ -1,4 +1,4 @@
-/****************************************************************************
+x/****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  
  http://www.cocos2d-x.org
@@ -26,6 +26,7 @@
 #include "HelloWorldScene.h"
 
 #include "../proj.win32/TitleMenu.h"
+#include "UI.h"
 
 // #define USE_AUDIO_ENGINE 1
 

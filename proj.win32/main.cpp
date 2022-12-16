@@ -32,7 +32,7 @@
 
 USING_NS_CC;
 
-#define SHOW_CONSOLE
+//#define SHOW_CONSOLE
 
 #ifdef SHOW_CONSOLE
 int main()
@@ -49,6 +49,19 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
     // create the application instance
     AppDelegate app;
 
+    auto firstScene = Scene::create();
+    auto secondScene = Scene::create();
+    
+
+	
+    
+   
+
+    
+	
+	//staline->replaceScene(TransitionFade::create(2, secondScene, Color3B(0, 255, 255)));
+
+ //   std::cout << " --------------------------------------- Loaded Second Scene ------------------------------------------ " << std::endl;
 
 
     return Application::getInstance()->run();
