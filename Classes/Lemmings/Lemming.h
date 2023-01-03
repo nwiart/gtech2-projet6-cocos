@@ -38,10 +38,20 @@ public:
 
 	virtual void update(float deltaTime) override;
 
+	void move(float dx, float dy);
+
+	void collideWall();
+
+	void toggleDirection();
+
 	bool isFalling() const { return m_state == STATE_FALLING; }
 
 	void getAABB(lemmings::AABB& out) const;
 
+	const cocos2d::Vec2& getDesiredDisplacement() const { return m_displacement; }
+
+	void setDX(float dx) { m_displacement.x = dx; }
+	void setDY(float dy) { m_displacement.y = dy; }
 	void setState(State t);
 
 	static Lemming* create();
@@ -49,6 +59,8 @@ public:
 
 
 private:
+
+	cocos2d::Vec2 m_displacement;
 
 	State m_state;
 	Direction m_direction;

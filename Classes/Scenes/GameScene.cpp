@@ -19,20 +19,23 @@ bool GameScene::init()
 	// Default values.
 	speedUp = false;
 
+	//this->setColor(Color3B(40, 127, 255));
 
 	Size screenSize = Director::getInstance()->getVisibleSize();
 	int width = screenSize.width / NUM_BUTTONS;
 
 	m_tileMap = TMXTiledMap::create("maps/testmap.tmx");
 	m_tileMap->setPosition(Vec2(0, width));
-	m_tileMap->setScale(2);
+	m_tileMapLayer = m_tileMap->getLayer("Calque de Tuiles 1");
+	//m_tileMap->setScale(2);
 	this->addChild(m_tileMap);
 
 	Lemming* l = Lemming::create();
-	l->setScale(4);
-	l->setPosition(Vec2(0, 0));
+	//l->setScale(4);
+	l->setPosition(Vec2(20*16, 5*16+1));
 	AppDelegate::getLemmingsAnimations().playOn(l, Lemming::STATE_WALK);
-	this->addChild(l);
+	m_lemmings.push_back(l);
+	m_tileMap->addChild(l);
 
 
 	// Create cursor sprite.
@@ -98,26 +101,90 @@ void GameScene::update(float d)
 {
 	Scene::update(d);
 
+	// Get AABBs around the lemming.
 	std::vector<lemmings::AABB> aabbs;
-	TMXLayer* l = m_tileMap->getLayer("Calque de Tuiles 1");
+	TMXLayer* layer = m_tileMap->getLayer("Calque de Tuiles 1");
 
-	Size size = l->getMapTileSize();
+	Size mapSize  = m_tileMap->getMapSize();
+	Size tileSize = layer->getMapTileSize();
 
-	int xPos=0, yPos=31, radius=3;
-	for (int y = std::max(0, yPos - radius); y <= std::min((int) size.height, yPos + radius); ++y) {
-		for (int x = std::max(0, xPos - radius); x <= xPos + radius; ++x) {
-			
-			uint32_t tileID = l->getTileGIDAt(Vec2(x, y));
-			if (tileID != 0) {
+	const int RADIUS = 1;
 
-				Vec2 pos = l->getPositionAt(Vec2(x, y));
-				lemmings::AABB aabb(0, 0, 0,0 );
-				aabbs.push_back(aabb);
+	for (Lemming* l : m_lemmings) {
+
+		l->update(d);
+
+		int xPos = (l->getPositionX() / tileSize.width);
+		int yPos = mapSize.height - (l->getPositionY() / tileSize.height);
+
+		for (int y = std::max(0, yPos - RADIUS); y <= std::min((int)mapSize.height - 1, yPos + RADIUS); ++y) {
+			for (int x = std::max(0, xPos - RADIUS); x <= std::min((int)mapSize.width - 1, xPos + RADIUS); ++x) {
+
+				int pixelX = (x * tileSize.width);
+				int pixelY = (mapSize.height - y - 1) * tileSize.height;
+
+				uint32_t tileID = layer->getTileGIDAt(Vec2(x, y));
+				if (tileID != 0) {
+
+					lemmings::AABB aabb(pixelX, pixelY, pixelX + tileSize.width, pixelY + tileSize.height);
+					aabbs.push_back(aabb);
+				}
 			}
 		}
-	}
 
-	__asm {
-		int 3
+		log("%d %d %d", xPos, yPos, aabbs.size());
+
+		float dx = l->getDesiredDisplacement().x;
+		float dy = l->getDesiredDisplacement().y;
+
+		/*bool colX = false;
+
+		lemmings::AABB lemmingBox;
+		l->getAABB(lemmingBox);
+		for (const lemmings::AABB& aabb : aabbs) {
+
+			float newDx = dx;
+			if (dx != 0.0F) newDx = lemmingBox.collideX(aabb, dx);
+			if (newDx != dx) {
+				dx = newDx;
+				colX = true;
+			}
+
+			if (dy != 0.0F) dy = lemmingBox.collideY(aabb, dy);
+		}
+
+		if (colX) {
+			l->collideWall();
+		}*/
+
+		// Horizontal collision.
+		int offset = (dx > 0) ? 5 : -5;
+		if (isTileCollidable(l->getPositionX() + offset, l->getPositionY())) {
+			if (isTileCollidable(l->getPositionX() + offset, l->getPositionY() + 16)) {
+				l->collideWall();
+			}
+			else {
+				l->setPositionY(l->getPositionY() + 16);
+			}
+		}
+
+		l->move(dx, dy);
 	}
+}
+
+bool GameScene::isTileCollidable(int tileX, int tileY) const
+{
+	Size mapSize = m_tileMap->getMapSize();
+	if (tileX < 0 || tileX >= mapSize.width || tileY < 0 || tileY >= mapSize.height)
+		return true;
+
+	return m_tileMapLayer->getTileGIDAt(Vec2(tileX, tileY)) != 0;
+}
+
+bool GameScene::isTileCollidable(float worldX, float worldY) const
+{
+	int xPos = (worldX / 16);
+	int yPos = m_tileMap->getMapSize().height - (worldY / 16);
+
+	return this->isTileCollidable(xPos, yPos);
 }
