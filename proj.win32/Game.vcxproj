@@ -801,6 +801,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\AABB.h" />
     <ClInclude Include="S:\Game\Classes\Lemmings\Animation\SpriteAnimations.h" />
     <ClInclude Include="S:\Game\Classes\Lemmings\Lemming.h" />
     <ClInclude Include="S:\Game\Classes\Scenes\GameScene.h" />
@@ -811,7 +812,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="S:\Game\Classes\HelloWorldScene.h" />
     <ClInclude Include="S:\Game\proj.win32\main.h" />
     <ClInclude Include="S:\Game\proj.win32\resource.h" />
-
+    <ClCompile Include="..\Classes\AABB.cpp" />
     <ClCompile Include="S:\Game\Classes\Lemmings\Animation\SpriteAnimations.cpp" />
     <ClCompile Include="S:\Game\Classes\Lemmings\Lemming.cpp" />
     <ClCompile Include="S:\Game\Classes\Scenes\GameScene.cpp" />

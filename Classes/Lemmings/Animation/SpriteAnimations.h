@@ -11,6 +11,8 @@ public:
 
 	SpriteAnimations();
 
+	void init();
+
 	/// <summary>
 	/// Play an animation on a lemming, based on a given state.
 	/// </summary>

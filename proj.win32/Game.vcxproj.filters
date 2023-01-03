@@ -25,6 +25,9 @@
     <ClCompile Include="S:\Game\Classes\Scenes\GameScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AABB.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="S:\Game\Classes\AppDelegate.h">
@@ -73,6 +76,9 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="S:\Game\Classes\Scenes\SettingsScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AABB.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,6 +14,8 @@ public:
 
     virtual bool init() override;
 
+    virtual void update(float d) override;
+
     void menuCloseCallback(Ref *pSender);
     void exitScene(Ref *pSender);
 
@@ -21,11 +23,12 @@ public:
 
 private:
 
+    static const int NUM_BUTTONS = 6;
 
     cocos2d::Sprite* m_cursorSprite;
-
-    static const int NUM_BUTTONS = 6;
     cocos2d::Label* m_remainingTasksLabels[NUM_BUTTONS - 1];
+
+    cocos2d::TMXTiledMap* m_tileMap;
 
     bool speedUp;
 };

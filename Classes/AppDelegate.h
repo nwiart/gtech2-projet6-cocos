@@ -27,6 +27,8 @@
 
 #include "cocos2d.h"
 
+#include "Lemmings/Animation/SpriteAnimations.h"
+
 /**
 @brief    The cocos2d Application.
 
@@ -58,6 +60,13 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+
+
+    static SpriteAnimations& getLemmingsAnimations() { return m_animations; }
+
+private:
+
+    static SpriteAnimations m_animations;
 };
 
 #endif // _APP_DELEGATE_H_

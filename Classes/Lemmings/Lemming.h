@@ -2,6 +2,8 @@
 
 #include <cocos2d.h>
 
+#include "AABB.h"
+
 
 class Lemming : public cocos2d::Sprite
 {
@@ -16,12 +18,17 @@ public:
 		STATE_DROWNING,
 		STATE_EXIT,
 		STATE_FALLING,
-		STATE_JUMP,
 		STATE_SPLASH,
 		STATE_STUNNED,
 		STATE_BASHER,
 		STATE_UMBRELLA_DEPLOY,
 		STATE_UMBRELLA_FLOAT,
+	};
+
+	enum Direction
+	{
+		DIRECTION_LEFT,
+		DIRECTION_RIGHT
 	};
 
 
@@ -33,6 +40,8 @@ public:
 
 	bool isFalling() const { return m_state == STATE_FALLING; }
 
+	void getAABB(lemmings::AABB& out) const;
+
 	void setState(State t);
 
 	static Lemming* create();
@@ -42,4 +51,5 @@ public:
 private:
 
 	State m_state;
+	Direction m_direction;
 };

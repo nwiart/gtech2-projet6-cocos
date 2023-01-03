@@ -7,6 +7,11 @@ USING_NS_CC;
 
 SpriteAnimations::SpriteAnimations()
 {
+
+}
+
+void SpriteAnimations::init()
+{
 	Vector<SpriteFrame*> frames;
 
 	// Walk.
