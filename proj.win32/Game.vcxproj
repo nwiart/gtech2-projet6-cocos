@@ -836,12 +836,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="S:\Game\proj.win32\SYNC_RESOURCE-Game.vcxproj">
-      <Project>{AE8BA1CE-FB28-35F4-9AB0-8BFD4F7BDBA0}</Project>
-      <Name>SYNC_RESOURCE-Game</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
     <ProjectReference Include="S:\Game\proj.win32\engine\cocos\core\cocos2d.vcxproj">
       <Project>{EF2A1BC2-CA69-351A-BD21-2D79EFD39C4A}</Project>
       <Name>cocos2d</Name>
