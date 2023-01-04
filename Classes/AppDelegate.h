@@ -61,6 +61,12 @@ public:
     */
     virtual void applicationWillEnterForeground();
 
+    template<class T>
+    static void openScene()
+    {
+		T* scene = T::createScene();
+		Director::getInstance()->replaceScene(scene);
+    }
 
     static SpriteAnimations& getLemmingsAnimations() { return m_animations; }
 

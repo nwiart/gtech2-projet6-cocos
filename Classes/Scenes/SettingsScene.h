@@ -5,11 +5,15 @@
 class SettingsScene : public cocos2d::Scene
 {
     public:
+
+        static SettingsScene* createScene() { return SettingsScene::create(); }
+
         SettingsScene(/* args */);
         ~SettingsScene();
 
+        virtual bool init() override;
         
-        void menuCloseCallback(Ref* pSender);
+        void changeToTitleScene(Ref* pSender);
         void exitScene(Ref* pSender);
         
         CREATE_FUNC(SettingsScene);

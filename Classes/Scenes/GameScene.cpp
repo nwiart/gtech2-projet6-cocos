@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "AppDelegate.h"
+#include "PauseScene.h"
 
 #include "Lemmings/Lemming.h"
 
@@ -51,6 +52,16 @@ bool GameScene::init()
 			"",
 			"",
 		};
+
+		// UI BUTTON
+		////// Aliases
+		Size visibleSize = Director::getInstance()->getVisibleSize();
+		Vec2 origin = Director::getInstance()->getVisibleOrigin();
+		
+		Button* titleButton = Button::create("pause.png");
+		titleButton->setPosition(Vec2(visibleSize.width - 75, visibleSize.height - 20));
+		titleButton->addTouchEventListener(CC_CALLBACK_1(GameScene::changeToPauseScene, this));
+		this->addChild(titleButton, 2);
 
 		// Task buttons.
 		for (int i = 0; i < NUM_BUTTONS - 1; ++i) {
@@ -170,6 +181,16 @@ void GameScene::update(float d)
 
 		l->move(dx, dy);
 	}
+}
+
+void GameScene::changeToPauseScene(Ref* pSender)
+{
+	AppDelegate::openScene<PauseScene>();
+}
+
+void GameScene::changeToGameScene(Ref* pSender)
+{
+	AppDelegate::openScene<GameScene>();
 }
 
 bool GameScene::isTileCollidable(int tileX, int tileY) const

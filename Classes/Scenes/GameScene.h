@@ -20,6 +20,8 @@ public:
 
 	virtual void update(float d) override;
 
+	void changeToPauseScene(Ref* pSender);
+	void changeToGameScene(Ref* pSender);
 	void menuCloseCallback(Ref *pSender);
 	void exitScene(Ref *pSender);
 
