@@ -11,7 +11,7 @@ public:
 
 	
 	static TitleMenu* createScene();
-	virtual bool init();
+	virtual bool init() override;
 
 	void launchGame(Ref* pSender);
 
