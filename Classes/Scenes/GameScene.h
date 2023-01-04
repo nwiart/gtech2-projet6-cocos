@@ -2,6 +2,8 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 
+#include "Lemmings/Lemming.h"
+
 #include <vector>
 
 class Lemming;
@@ -20,6 +22,8 @@ public:
 
 	virtual void update(float d) override;
 
+	bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+
 	void menuCloseCallback(Ref *pSender);
 	void exitScene(Ref *pSender);
 
@@ -33,6 +37,11 @@ public:
 
 	bool isTileCollidable(float worldX, float worldY) const;
 
+	bool destroyTile(int tileX, int tileY);
+
+	void selectBasherTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+	void selectBlockerTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+
 
 
 private:
@@ -40,6 +49,7 @@ private:
 	static const int NUM_BUTTONS = 6;
 
 	cocos2d::Sprite* m_cursorSprite;
+	cocos2d::ui::Button* m_remainingTasksButtons[NUM_BUTTONS - 1];
 	cocos2d::Label* m_remainingTasksLabels[NUM_BUTTONS - 1];
 
 	cocos2d::TMXTiledMap* m_tileMap;
@@ -47,5 +57,6 @@ private:
 
 	std::vector<Lemming*> m_lemmings;
 
-	bool speedUp;
+	Lemming::State selectedState;
+	int speedUp;
 };

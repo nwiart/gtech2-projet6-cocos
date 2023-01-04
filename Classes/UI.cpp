@@ -37,7 +37,7 @@ bool TitleMenu::init()
 	auto visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
 	cocos2d::Vec2 origin = cocos2d::Director::getInstance()->getVisibleOrigin();
 	//auto button = cocos2d::ui::Button::create("Button_Press.png");
-
+	
 	auto exitItem = MenuItemImage::create("CloseNormal.png", "CloseSelected.png",CC_CALLBACK_1(TitleMenu::menuCloseCallback, this));
 	auto launch = MenuItemImage::create("Button_Normal.png", "Button_Disable.png", CC_CALLBACK_1(TitleMenu::launchGame, this));
 	auto menu = Menu::create(exitItem,launch, NULL);
