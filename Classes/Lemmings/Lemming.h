@@ -4,47 +4,46 @@
 
 #include "AABB.h"
 
-
 class Lemming : public cocos2d::Sprite
 {
 public:
+    enum State
+    {
+        STATE_NONE, // Default.
+        STATE_WALK,
+        STATE_BLOCKER,
+        STATE_BOMBER,
+        STATE_DIGGER,
+        STATE_DROWNING,
+        STATE_EXIT,
+        STATE_SPLASH,
+        STATE_STUNNED,
+        STATE_BASHER,
+        STATE_UMBRELLA_DEPLOY,
+        STATE_UMBRELLA_FLOAT,
+    };
 
-	enum State
-	{
-		STATE_WALK,    // Default.
-		STATE_BLOCKER,
-		STATE_BOMBER,
-		STATE_DIGGER,
-		STATE_DROWNING,
-		STATE_EXIT,
-		STATE_FALLING,
-		STATE_SPLASH,
-		STATE_STUNNED,
-		STATE_BASHER,
-		STATE_UMBRELLA_DEPLOY,
-		STATE_UMBRELLA_FLOAT,
-	};
-
-	enum Direction
-	{
-		DIRECTION_LEFT,
-		DIRECTION_RIGHT
-	};
-
+    enum Direction
+    {
+        DIRECTION_LEFT,
+        DIRECTION_RIGHT
+    };
 
 public:
+    Lemming();
 
-	Lemming();
+    virtual void update(float deltaTime) override;
 
-	virtual void update(float deltaTime) override;
+    void move(float dx, float dy);
 
-	void move(float dx, float dy);
+    void collideWall();
 
-	void collideWall();
+    void toggleDirection();
 
-	void toggleDirection();
-
-	bool isFalling() const { return m_state == STATE_FALLING; }
+	State getState() const { return m_state; }
+	bool isFalling() const { return m_falling; }
+	bool isDead() const { return m_dead; }
+	float getFallHeight() const { return m_fallHeight; }
 
 	void getAABB(lemmings::AABB& out) const;
 
@@ -53,15 +52,18 @@ public:
 	void setDX(float dx) { m_displacement.x = dx; }
 	void setDY(float dy) { m_displacement.y = dy; }
 	void setState(State t);
+	void setFalling(bool b) { m_falling = b; this->setState(m_state); }
+	void setFallHeight(float h) { m_fallHeight = h; }
 
 	static Lemming* create();
 
-
-
 private:
-
-	cocos2d::Vec2 m_displacement;
+    cocos2d::Vec2 m_displacement;
 
 	State m_state;
 	Direction m_direction;
+	bool m_falling : 1;
+	bool m_dead : 1;
+	float m_fallHeight;
+	float m_deadTimer;
 };

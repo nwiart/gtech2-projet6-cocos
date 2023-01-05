@@ -31,8 +31,7 @@ public:
 	cocos2d::Action* anim_drowning;
 	cocos2d::Action* anim_exit;
 	cocos2d::Action* anim_falling;
-	cocos2d::Action* anim_stunned;
+	cocos2d::Action* anim_splash;
 	cocos2d::Action* anim_umbrelladeploy;
 	cocos2d::Action* anim_umbrellafloat;
-
 };

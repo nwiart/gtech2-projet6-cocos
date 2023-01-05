@@ -34,7 +34,7 @@
     <ClCompile Include="..\Classes\Scenes\SettingsScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Scenes\PauseScene.cpp">
+    <ClCompile Include="..\Classes\Scenes\WinningScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -90,7 +90,7 @@
     <ClInclude Include="..\Classes\AABB.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Scenes\PauseScene.h">
+    <ClInclude Include="..\Classes\Scenes\WinningScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,13 @@
 #include "Lemming.h"
 
 #include "Lemmings/Animation/SpriteAnimations.h"
+#include "AppDelegate.h"
+
+#include <cocos2d.h>
 
 
 Lemming::Lemming()
-	: m_state(STATE_WALK), m_direction(DIRECTION_RIGHT)
+	: m_state(STATE_NONE), m_direction(DIRECTION_RIGHT), m_falling(false), m_fallHeight(0.0F), m_dead(false)
 {
 	
 }
@@ -13,35 +16,53 @@ void Lemming::update(float deltaTime)
 {
 	Sprite::update(deltaTime);
 
-	switch (m_state)
-	{
-	case STATE_WALK:
-	default:
-		this->setDX((m_direction == DIRECTION_RIGHT) ? 1.0F : -1.0F);
-		break;
+	this->setDX(0.0F);
+	this->setDY(0.0F);
 
-	case STATE_BLOCKER:
-		break;
+	float speed = 0.4F;// *cocos2d::Director::getInstance()->getScheduler()->getTimeScale();
 
-	case STATE_BOMBER:
-		break;
+	if (m_falling) {
+		this->setDY(-speed);
+	}
+	else {
+		switch (m_state)
+		{
+		case STATE_WALK:
+		default:
+			this->setDX((m_direction == DIRECTION_RIGHT) ? speed : -speed);
+			break;
 
-	case STATE_DIGGER:
-		this->setDX((m_direction == DIRECTION_RIGHT) ? 1.0F : -1.0F);
-		break;
+		case STATE_BASHER:
+			this->setDX((m_direction == DIRECTION_RIGHT) ? speed : -speed);
+			break;
 
-	case STATE_EXIT:
-		break;
+		case STATE_BLOCKER:
+			break;
 
-	case STATE_FALLING:
-		this->setDY(-3.0F);
-		break;
+		case STATE_BOMBER:
+			break;
 
-	case STATE_UMBRELLA_DEPLOY:
-		break;
+		case STATE_DIGGER:
+			this->setDX((m_direction == DIRECTION_RIGHT) ? speed : -speed);
+			break;
 
-	case STATE_UMBRELLA_FLOAT:
-		break;
+		case STATE_EXIT:
+			break;
+
+		case STATE_SPLASH:
+			m_dead = true;
+			if (this->getActionManager()->getNumberOfRunningActions() == 0) {
+				cocos2d::log("nsdhifbgih");
+				this->removeFromParentAndCleanup(true);
+			}
+			break;
+
+		case STATE_UMBRELLA_DEPLOY:
+			break;
+
+		case STATE_UMBRELLA_FLOAT:
+			break;
+		}
 	}
 }
 
@@ -82,8 +103,8 @@ void Lemming::setState(State t)
 	m_state = t;
 
 	// Play new animation.
-	this->getActionManager()->removeAllActions();
-	//SpriteAnimations::playOn(this, m_state);
+	this->getActionManager()->removeAllActionsFromTarget(this);
+	AppDelegate::getLemmingsAnimations().playOn(this, m_state);
 }
 
 Lemming* Lemming::create()
