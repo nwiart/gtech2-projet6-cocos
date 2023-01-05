@@ -11,13 +11,13 @@ public:
 
 	enum State
 	{
-		STATE_WALK,    // Default.
+		STATE_NONE,    // Default.
+		STATE_WALK,
 		STATE_BLOCKER,
 		STATE_BOMBER,
 		STATE_DIGGER,
 		STATE_DROWNING,
 		STATE_EXIT,
-		STATE_FALLING,
 		STATE_SPLASH,
 		STATE_STUNNED,
 		STATE_BASHER,
@@ -44,7 +44,9 @@ public:
 
 	void toggleDirection();
 
-	bool isFalling() const { return m_state == STATE_FALLING; }
+	State getState() const { return m_state; }
+	bool isFalling() const { return m_falling; }
+	float getFallTimer() const { return m_fallTimer; }
 
 	void getAABB(lemmings::AABB& out) const;
 
@@ -53,6 +55,7 @@ public:
 	void setDX(float dx) { m_displacement.x = dx; }
 	void setDY(float dy) { m_displacement.y = dy; }
 	void setState(State t);
+	void setFalling(bool b) { m_falling = b; }
 
 	static Lemming* create();
 
@@ -64,4 +67,6 @@ private:
 
 	State m_state;
 	Direction m_direction;
+	bool m_falling;
+	float m_fallTimer;
 };
