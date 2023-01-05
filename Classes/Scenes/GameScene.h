@@ -36,11 +36,18 @@ public:
 
 	bool destroyTile(int tileX, int tileY);
 
+	void explode(int tileX, int tileY);
+
 	void selectBasherTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
 	void selectBlockerTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
+	void selectBomberTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+	void selectDiggerTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+	void selectUmbrellaTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
 
 private:
 	static const int NUM_BUTTONS = 6;
+
+	cocos2d::Sprite* m_exitSprite;
 
 	cocos2d::Sprite* m_cursorSprite;
 	cocos2d::ui::Button* m_tasksButtons[NUM_BUTTONS - 1];
@@ -49,7 +56,9 @@ private:
 	cocos2d::TMXTiledMap *m_tileMap;
 	cocos2d::TMXLayer *m_tileMapLayer;
 
-	std::vector<Lemming *> m_lemmings;
+	std::vector<Lemming*> m_lemmings;
+	std::vector<Lemming*> m_blockingLemmings;
+	std::vector<Lemming*> m_explodingLemmings;
 
 	Lemming::State selectedState;
 	int speedUp;

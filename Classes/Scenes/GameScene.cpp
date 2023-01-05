@@ -34,7 +34,22 @@ bool GameScene::init()
 	//m_tileMap->setScale(2);
 	this->addChild(m_tileMap);
 
-	m_maxLemmings = 30;
+	// Exit sprite.
+	Vector<SpriteFrame*> frames;
+	frames.reserve(2);
+	frames.pushBack(SpriteFrame::create("exit1.png", Rect(0, 0, 60, 52)));
+	frames.pushBack(SpriteFrame::create("exit2.png", Rect(0, 0, 60, 52)));
+
+	Animation* a = Animation::createWithSpriteFrames(frames, 1.0F);
+	auto anim_exit = RepeatForever::create(Animate::create(a));
+	anim_exit->retain();
+	m_exitSprite = Sprite::create();
+	m_exitSprite->setAnchorPoint(Vec2(0.5F, 0.0F));
+	m_exitSprite->setPosition(Vec2(1024.0F * 5.0F / 6.0F + 64.0F, 5.0F * 16.0F));
+	m_exitSprite->runAction(anim_exit);
+	m_tileMap->addChild(m_exitSprite);
+
+	m_maxLemmings = 100;
 	m_spawnedLemmings = 0;
 	m_spawnTimer = 0.0F;
 
@@ -44,15 +59,6 @@ bool GameScene::init()
 
 	// Create buttons and remaining count.
 	{
-		const char* actionButtonTextures[NUM_BUTTONS] = {
-			"task_basher.png",
-			"task_blocker.png",
-			"CloseNormal.png",
-			"CloseNormal.png",
-			"CloseNormal.png",
-			"CloseNormal.png",
-		};
-
 		// UI BUTTON
 		////// Aliases
 		Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -118,6 +124,14 @@ bool GameScene::init()
 
 
 
+		const char* actionButtonTextures[NUM_BUTTONS - 1] = {
+			"task_basher.png",
+			"task_blocker.png",
+			"task_bomber.png",
+			"task_digger.png",
+			"task_umbrella.png",
+		};
+
 		// Task buttons.
 		for (int i = 0; i < NUM_BUTTONS - 1; ++i) {
 
@@ -129,7 +143,7 @@ bool GameScene::init()
 			m_tasksButtons[i]->setColor(Color3B(255, 255, 255));
 			this->addChild(m_tasksButtons[i]);
 
-			m_remainingTasksLabels[i] = Label::createWithTTF("5", "fonts/Marker Felt.ttf", 36);
+			m_remainingTasksLabels[i] = Label::createWithTTF("05", "fonts/Marker Felt.ttf", 36);
 			m_remainingTasksLabels[i]->setPosition(Vec2((i + 0.5F) * width, width - 24));
 			m_remainingTasksLabels[i]->setTextColor(Color4B(0, 0, 0, 255));
 			this->addChild(m_remainingTasksLabels[i]);
@@ -138,6 +152,9 @@ bool GameScene::init()
 		// Assign callbacks.
 		m_tasksButtons[0]->addTouchEventListener(CC_CALLBACK_2(GameScene::selectBasherTask, this));
 		m_tasksButtons[1]->addTouchEventListener(CC_CALLBACK_2(GameScene::selectBlockerTask, this));
+		m_tasksButtons[2]->addTouchEventListener(CC_CALLBACK_2(GameScene::selectBomberTask, this));
+		m_tasksButtons[3]->addTouchEventListener(CC_CALLBACK_2(GameScene::selectDiggerTask, this));
+		m_tasksButtons[4]->addTouchEventListener(CC_CALLBACK_2(GameScene::selectUmbrellaTask, this));
 
 		// Speed up button.
 		Button* btn = Button::create("CloseNormal.png");//actionButtonTextures[i]);
@@ -171,7 +188,6 @@ bool GameScene::init()
 
 void GameScene::update(float d)
 {
-
 	if (PAUSED) {
 		log("-------------------------- PAUSED ----------------------------------");
 		// Change color of bakckground, abd make buttons visible
@@ -192,9 +208,9 @@ void GameScene::update(float d)
 
 		m_spawnTimer += d;
 
-		if (m_spawnTimer >= 2.0F) {
+		if (m_spawnTimer >= 0.2F) {
 
-			m_spawnTimer -= 2.0F;
+			m_spawnTimer -= 0.2F;
 			m_spawnedLemmings++;
 
 			Lemming* l = Lemming::create();
@@ -206,12 +222,8 @@ void GameScene::update(float d)
 		}
 	}
 
-	// Get AABBs around the lemming.
-	std::vector<lemmings::AABB> aabbs;
-	TMXLayer* layer = m_tileMap->getLayer("Calque de Tuiles 1");
-
 	Size mapSize = m_tileMap->getMapSize();
-	Size tileSize = layer->getMapTileSize();
+	Size tileSize = m_tileMapLayer->getMapTileSize();
 
 	const int RADIUS = 1;
 
@@ -222,6 +234,15 @@ void GameScene::update(float d)
 
 			Lemming* l = *it;
 
+			if (l->getExplodeTimer() <= 0.0F) {
+				Size mapSize = m_tileMap->getMapSize();
+				Size tileSize = m_tileMapLayer->getMapTileSize();
+				int xPos = (l->getPositionX() / tileSize.width);
+				int yPos = mapSize.height - (l->getPositionY() / tileSize.height);
+				this->explode(xPos, yPos);
+				l->setDead(true);
+			}
+
 			if (l->isDead()) {
 				it = m_lemmings.erase(it);
 				continue;
@@ -231,44 +252,9 @@ void GameScene::update(float d)
 
 			int xPos = (l->getPositionX() / tileSize.width);
 			int yPos = mapSize.height - (l->getPositionY() / tileSize.height);
-
-			for (int y = std::max(0, yPos - RADIUS); y <= std::min((int)mapSize.height - 1, yPos + RADIUS); ++y) {
-				for (int x = std::max(0, xPos - RADIUS); x <= std::min((int)mapSize.width - 1, xPos + RADIUS); ++x) {
-
-					int pixelX = (x * tileSize.width);
-					int pixelY = (mapSize.height - y - 1) * tileSize.height;
-
-					uint32_t tileID = layer->getTileGIDAt(Vec2(x, y));
-					if (tileID != 0) {
-
-						lemmings::AABB aabb(pixelX, pixelY, pixelX + tileSize.width, pixelY + tileSize.height);
-						aabbs.push_back(aabb);
-					}
-				}
-			}
-
+			
 			float dx = l->getDesiredDisplacement().x;
 			float dy = l->getDesiredDisplacement().y;
-
-			/*bool colX = false;
-
-			lemmings::AABB lemmingBox;
-			l->getAABB(lemmingBox);
-			for (const lemmings::AABB& aabb : aabbs) {
-
-				float newDx = dx;
-				if (dx != 0.0F) newDx = lemmingBox.collideX(aabb, dx);
-				if (newDx != dx) {
-					dx = newDx;
-					colX = true;
-				}
-
-				if (dy != 0.0F) dy = lemmingBox.collideY(aabb, dy);
-			}
-
-			if (colX) {
-				l->collideWall();
-			}*/
 
 			int direction = (dx > 0) ? 1 : -1;
 			int offset = direction * 4; // boxSize
@@ -279,11 +265,21 @@ void GameScene::update(float d)
 				// Check if ground.
 				if (blockUnder) {
 					l->setFalling(false);
-					if (abs(l->getPositionY() - l->getFallHeight()) > 5.0F * 16.0F) {
-						l->setState(Lemming::STATE_SPLASH);
+
+					// Umbrella.
+					if (l->getState() == Lemming::STATE_UMBRELLA_FLOAT || l->getState() == Lemming::STATE_UMBRELLA_DEPLOY) {
+						l->setPositionY(((int)(l->getPositionY() / 16)) * 16 + 1);
+						l->setState(Lemming::STATE_WALK);
 					}
 					else {
-						l->setPositionY(((int)(l->getPositionY() / 16)) * 16 + 1);
+						bool shouldDie = abs(l->getPositionY() - l->getFallHeight()) > 5.0F * 16.0F;
+
+						if (shouldDie) {
+							l->setState(Lemming::STATE_SPLASH);
+						}
+						else {
+							l->setPositionY(((int)(l->getPositionY() / 16)) * 16 + 1);
+						}
 					}
 				}
 			}
@@ -308,9 +304,21 @@ void GameScene::update(float d)
 							break;
 
 						case Lemming::STATE_BASHER:
-							bool success = this->destroyTile(xPos + direction, yPos);
-							if (!success) {
-								l->collideWall();
+							{
+								bool success = this->destroyTile(xPos + direction, yPos);
+								if (!success) {
+									l->collideWall();
+								}
+							}
+							break;
+						}
+					}
+					else {
+						switch (l->getState())
+						{
+							case Lemming::STATE_DIGGER:
+							{
+								bool success = this->destroyTile(xPos, yPos + 1);
 							}
 							break;
 						}
@@ -318,7 +326,31 @@ void GameScene::update(float d)
 				}
 			}
 
+			// Test for blocker lemming.
+			for (Lemming* bl : m_blockingLemmings) {
+				if (l != bl) {
+
+					Vec2 diff = l->getPosition() - bl->getPosition();
+
+					if (abs(diff.y) <= 6.0F && abs(diff.x) <= 6.0F) {
+						if (diff.x > 0) {
+							l->setDirection(Lemming::DIRECTION_RIGHT);
+						}
+						else if (diff.x < 0) {
+							l->setDirection(Lemming::DIRECTION_LEFT);
+						}
+					}
+				}
+			}
+
 			l->move(dx, dy);
+
+			float distToExit = (l->getPosition() - m_exitSprite->getPosition()).length();
+			if (distToExit <= 0.5F) {
+				l->setState(Lemming::STATE_EXIT);
+				it = m_lemmings.erase(std::find(m_lemmings.begin(), m_lemmings.end(), l));
+				continue;
+			}
 
 			it++;
 		}
@@ -360,18 +392,38 @@ bool GameScene::onTouchBegan(Touch* touch, Event* unused_event)
 		switch (selectedState) {
 		case Lemming::STATE_BASHER: buttonID = 0; break;
 		case Lemming::STATE_BLOCKER: buttonID = 1; break;
+		case Lemming::STATE_BOMBER: buttonID = 2; break;
+		case Lemming::STATE_DIGGER: buttonID = 3; break;
+		case Lemming::STATE_UMBRELLA_DEPLOY: buttonID = 4; break;
 		}
 
-		// Decrement remaining task and update display.
-		m_remainingTasks[buttonID]--;
-		m_remainingTasksLabels[buttonID]->setString(std::to_string(m_remainingTasks[buttonID]));
+		if (minl->getState() == selectedState) {
+			minl->setState(Lemming::STATE_WALK);
+		}
+		else {
+			// Decrement remaining task and update display.
+			m_remainingTasks[buttonID]--;
+			std::string text = std::to_string(m_remainingTasks[buttonID]);
+			if (m_remainingTasks[buttonID] < 10) {
+				text = '0' + text;
+			}
+			m_remainingTasksLabels[buttonID]->setString(text);
 
-		// Update lemming state.
-		minl->setState(selectedState);
+			if (minl->getState() == Lemming::STATE_BLOCKER) {
+				m_blockingLemmings.erase(std::find(m_blockingLemmings.begin(), m_blockingLemmings.end(), minl));
+			}
 
-		// If exhausted, deselect state automatically.
-		if (m_remainingTasks[buttonID] == 0) {
-			selectedState = Lemming::STATE_NONE;
+			// Update lemming state.
+			minl->setState(selectedState);
+
+			if (selectedState == Lemming::STATE_BLOCKER) {
+				m_blockingLemmings.push_back(minl);
+			}
+
+			// If exhausted, deselect state automatically.
+			if (m_remainingTasks[buttonID] == 0) {
+				selectedState = Lemming::STATE_NONE;
+			}
 		}
 	}
 
@@ -405,6 +457,22 @@ bool GameScene::destroyTile(int tileX, int tileY)
 	return true;
 }
 
+void GameScene::explode(int tileX, int tileY)
+{
+	const int RAD = 2;
+
+	for (int y = tileY - RAD; y <= tileY + RAD; ++y) {
+		for (int x = tileX - RAD; x <= tileX + RAD; ++x) {
+
+			float dx = x - tileX, dy = y - tileY;
+			float dist = sqrt(dx * dx + dy * dy);
+			if (dist <= 2.4F) {
+				this->destroyTile(x, y);
+			}
+		}
+	}
+}
+
 void GameScene::selectBasherTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
 {
 	if (m_remainingTasks[0] > 0) {
@@ -419,6 +487,33 @@ void GameScene::selectBlockerTask(cocos2d::Ref* sender, cocos2d::ui::Widget::Tou
 	if (m_remainingTasks[1] > 0) {
 		if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
 			selectedState = (selectedState != Lemming::STATE_BLOCKER) ? Lemming::STATE_BLOCKER : Lemming::STATE_NONE;
+		}
+	}
+}
+
+void GameScene::selectBomberTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
+{
+	if (m_remainingTasks[2] > 0) {
+		if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
+			selectedState = (selectedState != Lemming::STATE_BOMBER) ? Lemming::STATE_BOMBER : Lemming::STATE_NONE;
+		}
+	}
+}
+
+void GameScene::selectDiggerTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
+{
+	if (m_remainingTasks[3] > 0) {
+		if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
+			selectedState = (selectedState != Lemming::STATE_DIGGER) ? Lemming::STATE_DIGGER : Lemming::STATE_NONE;
+		}
+	}
+}
+
+void GameScene::selectUmbrellaTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
+{
+	if (m_remainingTasks[4] > 0) {
+		if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
+			selectedState = (selectedState != Lemming::STATE_UMBRELLA_DEPLOY) ? Lemming::STATE_UMBRELLA_DEPLOY : Lemming::STATE_NONE;
 		}
 	}
 }
