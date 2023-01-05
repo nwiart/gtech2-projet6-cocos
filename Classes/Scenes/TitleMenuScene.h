@@ -16,7 +16,7 @@ public:
 	void launchGame(Ref* pSender);
 
 	void changeToSettingsScene(Ref* pSender);
-	void menuCloseCallback(Ref* pSender);
+	
 	void exitScene(Ref* pSender);
 
 	

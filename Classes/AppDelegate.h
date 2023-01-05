@@ -62,6 +62,7 @@ public:
     virtual void applicationWillEnterForeground();
 
     template<class T>
+    //static void openScene(int iData, char* cData)
     static void openScene()
     {
 		T* scene = T::createScene();

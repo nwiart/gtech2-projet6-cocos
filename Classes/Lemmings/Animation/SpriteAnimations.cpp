@@ -182,32 +182,7 @@ void SpriteAnimations::playOn(Lemming* l, int state)
 		case Lemming::STATE_BLOCKER: a = anim_blocker; break;
 		case Lemming::STATE_BOMBER_EXPLODE: a = anim_bomber; break;
 		case Lemming::STATE_SPLASH: a = anim_splash; break;
-
-			// Digger.
-			/*frames.clear();
-			frames.reserve(8);
-			{
-				for (int i = 0; i < 8; ++i) {
-					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (8) * 20, 20, 20)));
-				}
-
-				Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
-				anim_digger = RepeatForever::create(Animate::create(a));
-				anim_digger->retain();
-			}
-
-			// Drowning.
-			frames.clear();
-			frames.reserve(16);
-			{
-				for (int i = 0; i < 16; ++i) {
-					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (12) * 20, 20, 20)));
-				}
-
-				Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
-				anim_drowning = RepeatForever::create(Animate::create(a));
-				anim_drowning->retain();
-			}*/
+	
 
 			// Exit.
 		case Lemming::STATE_EXIT: a = anim_exit; break;

@@ -3,13 +3,14 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 
+class GameScene;
 class WinningScene : public cocos2d::Scene
 {
     public:
 
         static WinningScene* createScene() { return WinningScene::create(); }
 
-        WinningScene(/* args */);
+        WinningScene();
         ~WinningScene();
 
         virtual bool init() override;
