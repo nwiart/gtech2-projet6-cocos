@@ -84,6 +84,8 @@ bool GameScene::init()
 		m_bg = LayerColor::create(cocos2d::Color4B(50, 50, 50, 200));
 		m_bg->setContentSize(cocos2d::Size(visibleSize.width, visibleSize.height));
 
+		
+		// Create the resume button
 		m_resumeButton = Button::create("resume.png");
 		m_resumeButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 		m_resumeButton->addTouchEventListener(
@@ -97,13 +99,27 @@ bool GameScene::init()
 				}
 			}
 		);
+
+		// Create the quit button
+		m_exitButton = Button::create("exit.png");
+		m_exitButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2 - 100));
+		m_exitButton->addTouchEventListener(
+			[&](Ref* sender, Widget::TouchEventType type) {
+
+				if (type == Widget::TouchEventType::ENDED) {
+					Director::getInstance()->end();
+				}
+			}
+		);
 		this->addChild(m_bg, 2);
+		this->addChild(m_exitButton, 2);
 		this->addChild(m_resumeButton, 2);
 		m_bg->setVisible(false);
 		m_resumeButton->setVisible(false);
+		m_exitButton->setVisible(false);
 
-		m_resumeButton->retain();
-		m_bg->retain();
+		/*m_resumeButton->retain();
+		m_bg->retain();*/
 
 
 
@@ -165,6 +181,7 @@ void GameScene::update(float d)
 
 		Director::getInstance()->stopAnimation();
 		m_bg->setVisible(true);
+		m_exitButton->setVisible(true);
 		m_resumeButton->setVisible(true);
 		return;
 	}

@@ -55,6 +55,7 @@ private:
     Lemming::State selectedState;
 
     cocos2d::ui::Button *m_resumeButton;
+	cocos2d::ui::Button* m_exitButton;
     cocos2d::LayerColor *m_bg;
     bool PAUSED = false;
 };
