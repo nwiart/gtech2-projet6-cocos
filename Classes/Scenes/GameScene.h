@@ -49,7 +49,7 @@ private:
 	static const int NUM_BUTTONS = 6;
 
 	cocos2d::Sprite* m_cursorSprite;
-	cocos2d::ui::Button* m_remainingTasksButtons[NUM_BUTTONS - 1];
+	cocos2d::ui::Button* m_tasksButtons[NUM_BUTTONS - 1];
 	cocos2d::Label* m_remainingTasksLabels[NUM_BUTTONS - 1];
 
 	cocos2d::TMXTiledMap* m_tileMap;
@@ -59,4 +59,10 @@ private:
 
 	Lemming::State selectedState;
 	int speedUp;
+	int m_remainingTasks[NUM_BUTTONS - 1];
+
+	// Lemmings spawn.
+	int m_maxLemmings;
+	int m_spawnedLemmings;
+	float m_spawnTimer;
 };

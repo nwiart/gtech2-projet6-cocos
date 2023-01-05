@@ -46,7 +46,8 @@ public:
 
 	State getState() const { return m_state; }
 	bool isFalling() const { return m_falling; }
-	float getFallTimer() const { return m_fallTimer; }
+	bool isDead() const { return m_dead; }
+	float getFallHeight() const { return m_fallHeight; }
 
 	void getAABB(lemmings::AABB& out) const;
 
@@ -55,7 +56,8 @@ public:
 	void setDX(float dx) { m_displacement.x = dx; }
 	void setDY(float dy) { m_displacement.y = dy; }
 	void setState(State t);
-	void setFalling(bool b) { m_falling = b; }
+	void setFalling(bool b) { m_falling = b; this->setState(m_state); }
+	void setFallHeight(float h) { m_fallHeight = h; }
 
 	static Lemming* create();
 
@@ -67,6 +69,8 @@ private:
 
 	State m_state;
 	Direction m_direction;
-	bool m_falling;
-	float m_fallTimer;
+	bool m_falling : 1;
+	bool m_dead : 1;
+	float m_fallHeight;
+	float m_deadTimer;
 };

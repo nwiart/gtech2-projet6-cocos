@@ -121,6 +121,19 @@ void SpriteAnimations::init()
 		anim_falling->retain();
 	}
 
+	// Splash.
+	frames.clear();
+	frames.reserve(16);
+	{
+		for (int i = 0; i < 16; ++i) {
+			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (11) * 20, 20, 20)));
+		}
+
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.2F);
+		anim_splash = Animate::create(a);
+		anim_splash->retain();
+	}
+
 	// Umbrella deploy.
 	frames.clear();
 	frames.reserve(8);
@@ -129,7 +142,7 @@ void SpriteAnimations::init()
 			frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 4) * 20, (2) * 20, 20, 20)));
 		}
 
-		Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
+		Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
 		anim_umbrelladeploy = Animate::create(a);
 	}
 
@@ -154,58 +167,65 @@ void SpriteAnimations::playOn(Lemming* l, int state)
 	Vector<SpriteFrame*> frames;
 	Action* a = 0;
 
-	switch (state)
-	{
-	case Lemming::STATE_NONE: a = 0; break;
-	case Lemming::STATE_WALK: a = anim_walk; break;
-	case Lemming::STATE_BASHER: a = anim_basher; break;
-	case Lemming::STATE_BLOCKER: a = anim_blocker; break;
-	case Lemming::STATE_BOMBER: a = anim_bomber; break;
-
-		// Digger.
-		/*frames.clear();
-		frames.reserve(8);
+	if (l->isFalling()) {
+		a = anim_falling;
+	}
+	else {
+		switch (state)
 		{
-			for (int i = 0; i < 8; ++i) {
-				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (8) * 20, 20, 20)));
+		case Lemming::STATE_NONE: a = 0; break;
+		case Lemming::STATE_WALK: a = anim_walk; break;
+		case Lemming::STATE_BASHER: a = anim_basher; break;
+		case Lemming::STATE_BLOCKER: a = anim_blocker; break;
+		case Lemming::STATE_BOMBER: a = anim_bomber; break;
+		case Lemming::STATE_SPLASH: a = anim_splash; break;
+
+			// Digger.
+			/*frames.clear();
+			frames.reserve(8);
+			{
+				for (int i = 0; i < 8; ++i) {
+					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (8) * 20, 20, 20)));
+				}
+
+				Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
+				anim_digger = RepeatForever::create(Animate::create(a));
+				anim_digger->retain();
 			}
 
-			Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
-			anim_digger = RepeatForever::create(Animate::create(a));
-			anim_digger->retain();
+			// Drowning.
+			frames.clear();
+			frames.reserve(16);
+			{
+				for (int i = 0; i < 16; ++i) {
+					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (12) * 20, 20, 20)));
+				}
+
+				Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
+				anim_drowning = RepeatForever::create(Animate::create(a));
+				anim_drowning->retain();
+			}
+
+			// Exit.
+			frames.clear();
+			frames.reserve(8);
+			{
+				for (int i = 0; i < 8; ++i) {
+					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 1) * 20, (1) * 20, 20, 20)));
+				}
+
+				Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
+				anim_exit = Animate::create(a);
+				anim_exit->retain();
+			}*/
+
+			// Falling.
+		case Lemming::STATE_UMBRELLA_DEPLOY: a = anim_umbrelladeploy; break;
+		case Lemming::STATE_UMBRELLA_FLOAT: a = anim_umbrellafloat; break;
 		}
-
-		// Drowning.
-		frames.clear();
-		frames.reserve(16);
-		{
-			for (int i = 0; i < 16; ++i) {
-				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i) * 20, (12) * 20, 20, 20)));
-			}
-
-			Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
-			anim_drowning = RepeatForever::create(Animate::create(a));
-			anim_drowning->retain();
-		}
-
-		// Exit.
-		frames.clear();
-		frames.reserve(8);
-		{
-			for (int i = 0; i < 8; ++i) {
-				frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 1) * 20, (1) * 20, 20, 20)));
-			}
-
-			Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
-			anim_exit = Animate::create(a);
-			anim_exit->retain();
-		}*/
-
-		// Falling.
-	case Lemming::STATE_UMBRELLA_DEPLOY: a = anim_umbrelladeploy; break;
-	case Lemming::STATE_UMBRELLA_FLOAT: a = anim_umbrellafloat; break;
 	}
 
-	if (a)
+	if (a) {
 		l->runAction(a->clone());
+	}
 }

@@ -7,7 +7,7 @@
 
 
 Lemming::Lemming()
-	: m_state(STATE_NONE), m_direction(DIRECTION_RIGHT), m_falling(false)
+	: m_state(STATE_NONE), m_direction(DIRECTION_RIGHT), m_falling(false), m_fallHeight(0.0F), m_dead(false)
 {
 	
 }
@@ -23,10 +23,8 @@ void Lemming::update(float deltaTime)
 
 	if (m_falling) {
 		this->setDY(-speed);
-		m_fallTimer += deltaTime;
 	}
 	else {
-		m_fallTimer = 0;
 		switch (m_state)
 		{
 		case STATE_WALK:
@@ -52,7 +50,11 @@ void Lemming::update(float deltaTime)
 			break;
 
 		case STATE_SPLASH:
-			this->removeFromParentAndCleanup(true);
+			m_dead = true;
+			if (this->getActionManager()->getNumberOfRunningActions() == 0) {
+				cocos2d::log("nsdhifbgih");
+				this->removeFromParentAndCleanup(true);
+			}
 			break;
 
 		case STATE_UMBRELLA_DEPLOY:
@@ -98,13 +100,11 @@ void Lemming::getAABB(lemmings::AABB& out) const
 
 void Lemming::setState(State t)
 {
-	if (m_state != t) {
-		m_state = t;
+	m_state = t;
 
-		// Play new animation.
-		this->getActionManager()->removeAllActionsFromTarget(this);
-		AppDelegate::getLemmingsAnimations().playOn(this, m_state);
-	}
+	// Play new animation.
+	this->getActionManager()->removeAllActionsFromTarget(this);
+	AppDelegate::getLemmingsAnimations().playOn(this, m_state);
 }
 
 Lemming* Lemming::create()
