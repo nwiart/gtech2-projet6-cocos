@@ -10,19 +10,13 @@ public:
 	~TitleMenu();
 
 	
-	static TitleMenu* createScene();
+	static TitleMenu* createScene() { return TitleMenu::create(); }
 	virtual bool init() override;
 
 	void launchGame(Ref* pSender);
 
-	void changeToGameScene(Ref* pSender);
 	void changeToSettingsScene(Ref* pSender);
-	
-	
-	void changeScene(Ref* pSender);
-
 	void menuCloseCallback(Ref* pSender);
-
 	void exitScene(Ref* pSender);
 
 	
@@ -32,14 +26,7 @@ public:
 	CREATE_FUNC(TitleMenu);
 
 	TitleMenu* titleMenu;
-	Scene* GameScene;
-	Scene* SettingsScene;
-
-private: 
-
-
-
-
+	
 
 };
 

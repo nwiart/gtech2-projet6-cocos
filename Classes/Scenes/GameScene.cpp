@@ -1,7 +1,10 @@
 #include "GameScene.h"
 #include "AppDelegate.h"
+#include "PauseScene.h"
 
 #include "Lemmings/Lemming.h"
+
+#include "ui/CocosGUI.h"
 
 #include <math.h>
 
@@ -49,6 +52,71 @@ bool GameScene::init()
 			"CloseNormal.png",
 			"CloseNormal.png",
 		};
+
+		// UI BUTTON
+		////// Aliases
+		Size visibleSize = Director::getInstance()->getVisibleSize();
+		Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+		Button* titleButton = Button::create("pause.png");
+		titleButton->setPosition(Vec2(visibleSize.width - 75, visibleSize.height - 20));
+		titleButton->addTouchEventListener(
+			[&](Ref* sender, Widget::TouchEventType type) {
+
+				if (type == Widget::TouchEventType::ENDED) {
+					PAUSED = true;
+					Director::getInstance()->getScheduler()->setTimeScale(speedUp ? 2 : 1);
+				}
+			}
+		);
+		this->addChild(titleButton, 2);
+
+
+
+		////////////// PAUSED GAME UI /////////////////////////
+
+		// Create the background color of the pause menu
+		m_bg = LayerColor::create(cocos2d::Color4B(50, 50, 50, 200));
+		m_bg->setContentSize(cocos2d::Size(visibleSize.width, visibleSize.height));
+
+		
+		// Create the resume button
+		m_resumeButton = Button::create("resume.png");
+		m_resumeButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+		m_resumeButton->addTouchEventListener(
+			[&](Ref* sender, Widget::TouchEventType type) {
+
+				if (type == Widget::TouchEventType::ENDED) {
+					m_bg->setVisible(false);
+					m_resumeButton->setVisible(false);
+					PAUSED = false;
+					Director::getInstance()->startAnimation();
+				}
+			}
+		);
+
+		// Create the quit button
+		m_exitButton = Button::create("exit.png");
+		m_exitButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2 - 100));
+		m_exitButton->addTouchEventListener(
+			[&](Ref* sender, Widget::TouchEventType type) {
+
+				if (type == Widget::TouchEventType::ENDED) {
+					Director::getInstance()->end();
+				}
+			}
+		);
+		this->addChild(m_bg, 2);
+		this->addChild(m_exitButton, 2);
+		this->addChild(m_resumeButton, 2);
+		m_bg->setVisible(false);
+		m_resumeButton->setVisible(false);
+		m_exitButton->setVisible(false);
+
+		/*m_resumeButton->retain();
+		m_bg->retain();*/
+
+
 
 		// Task buttons.
 		for (int i = 0; i < NUM_BUTTONS - 1; ++i) {
@@ -103,6 +171,18 @@ bool GameScene::init()
 
 void GameScene::update(float d)
 {
+
+	if (PAUSED) {
+		log("-------------------------- PAUSED ----------------------------------");
+		// Change color of bakckground, abd make buttons visible
+
+		Director::getInstance()->stopAnimation();
+		m_bg->setVisible(true);
+		m_exitButton->setVisible(true);
+		m_resumeButton->setVisible(true);
+		return;
+	}
+
 	Scene::update(d);
 
 	int speedUpFactor = (1 << speedUp);
@@ -130,7 +210,7 @@ void GameScene::update(float d)
 	std::vector<lemmings::AABB> aabbs;
 	TMXLayer* layer = m_tileMap->getLayer("Calque de Tuiles 1");
 
-	Size mapSize  = m_tileMap->getMapSize();
+	Size mapSize = m_tileMap->getMapSize();
 	Size tileSize = layer->getMapTileSize();
 
 	const int RADIUS = 1;
@@ -243,6 +323,17 @@ void GameScene::update(float d)
 			it++;
 		}
 	}
+}
+
+void GameScene::changeToPauseScene(Ref* pSender)
+{
+	AppDelegate::openScene<PauseScene>();
+}
+
+void GameScene::changeToGameScene(Ref* pSender)
+{
+	AppDelegate::openScene<GameScene>();
+	bool PAUSED = false;
 }
 
 bool GameScene::onTouchBegan(Touch* touch, Event* unused_event)

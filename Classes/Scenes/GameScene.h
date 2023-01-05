@@ -11,51 +11,48 @@ class Lemming;
 class GameScene : public cocos2d::Scene
 {
 public:
+    static GameScene *createScene() { return GameScene::create(); }
 
-	static GameScene* createScene() { return GameScene::create(); }
+    GameScene(/* args */) {}
+    ~GameScene() {}
 
+    virtual bool init() override;
 
-	GameScene(/* args */) {}
-	~GameScene() {}
+    virtual void update(float d) override;
 
-	virtual bool init() override;
+    void changeToPauseScene(Ref *pSender);
+    void changeToGameScene(Ref *pSender);
+    void menuCloseCallback(Ref *pSender);
+    void exitScene(Ref *pSender);
+    bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event);
 
-	virtual void update(float d) override;
+    CREATE_FUNC(GameScene);
 
-	bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    /// Is tile collidable.
+    /// Out-of-bounds coordinates always count as collision, as to keep lemmings from clipping out of the level.
+    bool isTileCollidable(int tileX, int tileY) const;
 
-	void menuCloseCallback(Ref *pSender);
-	void exitScene(Ref *pSender);
+    bool isTileCollidable(float worldX, float worldY) const;
 
-	CREATE_FUNC(GameScene);
+    bool destroyTile(int tileX, int tileY);
 
-
-
-	/// Is tile collidable.
-	/// Out-of-bounds coordinates always count as collision, as to keep lemmings from clipping out of the level.
-	bool isTileCollidable(int tileX, int tileY) const;
-
-	bool isTileCollidable(float worldX, float worldY) const;
-
-	bool destroyTile(int tileX, int tileY);
-
-	void selectBasherTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
-	void selectBlockerTask(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
-
-
+    void selectBasherTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
+    void selectBlockerTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
 
 private:
-
-	static const int NUM_BUTTONS = 6;
+    static const int NUM_BUTTONS = 6;
 
 	cocos2d::Sprite* m_cursorSprite;
 	cocos2d::ui::Button* m_tasksButtons[NUM_BUTTONS - 1];
 	cocos2d::Label* m_remainingTasksLabels[NUM_BUTTONS - 1];
 
-	cocos2d::TMXTiledMap* m_tileMap;
-	cocos2d::TMXLayer* m_tileMapLayer;
+    cocos2d::TMXTiledMap *m_tileMap;
+    cocos2d::TMXLayer *m_tileMapLayer;
 
-	std::vector<Lemming*> m_lemmings;
+    std::vector<Lemming *> m_lemmings;
+
+    bool speedUp;
+    Lemming::State selectedState;
 
 	Lemming::State selectedState;
 	int speedUp;
@@ -65,4 +62,9 @@ private:
 	int m_maxLemmings;
 	int m_spawnedLemmings;
 	float m_spawnTimer;
+
+    cocos2d::ui::Button *m_resumeButton;
+	cocos2d::ui::Button* m_exitButton;
+    cocos2d::LayerColor *m_bg;
+    bool PAUSED = false;
 };

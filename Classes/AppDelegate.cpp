@@ -27,6 +27,8 @@
 
 #include "Scenes/TitleMenuScene.h"
 #include "Scenes/GameScene.h"
+#include "Scenes/SettingsScene.h"
+#include "Scenes/PauseScene.h"
 
 
 // #define USE_AUDIO_ENGINE 1
@@ -115,8 +117,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     m_animations.init();
 
-    //TitleMenu* titleMenu = TitleMenu::createScene();
-    GameScene* titleMenu = GameScene::createScene();
+    TitleMenu* titleMenu = TitleMenu::createScene();
+    GameScene* gameScene = GameScene::createScene();
+    SettingsScene* settingsScene = SettingsScene::createScene();
+	PauseScene* pauseScene = PauseScene::createScene();
+    
     
     //titleMenu->init();
     director->runWithScene(titleMenu);
