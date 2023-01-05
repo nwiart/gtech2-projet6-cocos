@@ -144,6 +144,7 @@ void SpriteAnimations::init()
 
 		Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
 		anim_umbrelladeploy = Animate::create(a);
+		anim_umbrelladeploy->retain();
 	}
 
 	// Umbrella float.
@@ -159,6 +160,7 @@ void SpriteAnimations::init()
 
 		Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
 		anim_umbrellafloat = RepeatForever::create(Animate::create(a));
+		anim_umbrellafloat->retain();
 	}
 }
 
@@ -167,17 +169,18 @@ void SpriteAnimations::playOn(Lemming* l, int state)
 	Vector<SpriteFrame*> frames;
 	Action* a = 0;
 
-	if (l->isFalling()) {
+	if (l->isFalling() && l->getState() != Lemming::STATE_UMBRELLA_DEPLOY && l->getState() != Lemming::STATE_UMBRELLA_FLOAT) {
 		a = anim_falling;
 	}
 	else {
 		switch (state)
 		{
 		case Lemming::STATE_NONE: a = 0; break;
-		case Lemming::STATE_WALK: a = anim_walk; break;
+		case Lemming::STATE_WALK:
+		case Lemming::STATE_BOMBER: a = anim_walk; break;
 		case Lemming::STATE_BASHER: a = anim_basher; break;
 		case Lemming::STATE_BLOCKER: a = anim_blocker; break;
-		case Lemming::STATE_BOMBER: a = anim_bomber; break;
+		case Lemming::STATE_BOMBER_EXPLODE: a = anim_bomber; break;
 		case Lemming::STATE_SPLASH: a = anim_splash; break;
 
 			// Digger.
@@ -204,20 +207,10 @@ void SpriteAnimations::playOn(Lemming* l, int state)
 				Animation* a = Animation::createWithSpriteFrames(frames, 0.05F);
 				anim_drowning = RepeatForever::create(Animate::create(a));
 				anim_drowning->retain();
-			}
+			}*/
 
 			// Exit.
-			frames.clear();
-			frames.reserve(8);
-			{
-				for (int i = 0; i < 8; ++i) {
-					frames.pushBack(SpriteFrame::create("lemming_sheet.png", Rect((i + 1) * 20, (1) * 20, 20, 20)));
-				}
-
-				Animation* a = Animation::createWithSpriteFrames(frames, 0.1F);
-				anim_exit = Animate::create(a);
-				anim_exit->retain();
-			}*/
+		case Lemming::STATE_EXIT: a = anim_exit; break;
 
 			// Falling.
 		case Lemming::STATE_UMBRELLA_DEPLOY: a = anim_umbrelladeploy; break;
