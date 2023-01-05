@@ -38,6 +38,7 @@ bool TitleMenu::init()
     Sprite* title = Sprite::create("title.png");
     title->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(title, 1);*/
+    log("-------------------------- Title Menu ----------------------------------");
 
     // Setup the buttons
     Button* playButton = Button::create("play.png");
