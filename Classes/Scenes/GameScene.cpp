@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "AppDelegate.h"
 #include "WinningScene.h"
+#include "LosingScene.h"
 
 #include "Lemmings/Lemming.h"
 
@@ -92,15 +93,32 @@ bool GameScene::init()
                 {
                     m_bg->setVisible(false);
                     m_resumeButton->setVisible(false);
+					m_restartButton->setVisible(false);
                     m_exitButton->setVisible(false);
                     PAUSED = false;
                     Director::getInstance()->startAnimation();
                 }
             });
 
+        // Create Restart button
+        m_restartButton = Button::create("Button_Normal.png");
+		m_restartButton->setTitleText("Restart");
+        m_restartButton->setTitleColor(Color3B(0,0,0));
+        m_restartButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2 - 70));
+        m_restartButton->addTouchEventListener(
+            [&](Ref *sender, Widget::TouchEventType type)
+            {
+                if (type == Widget::TouchEventType::ENDED)
+                {
+                    Director::getInstance()->replaceScene(GameScene::createScene());
+					PAUSED = false;
+					Director::getInstance()->startAnimation();
+                }
+            });
+
         // Create the quit button
         m_exitButton = Button::create("exit.png");
-        m_exitButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2 - 100));
+        m_exitButton->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2 - 140));
         m_exitButton->addTouchEventListener(
             [&](Ref *sender, Widget::TouchEventType type)
             {
@@ -110,10 +128,12 @@ bool GameScene::init()
                 }
             });
         this->addChild(m_bg, 2);
-        this->addChild(m_exitButton, 2);
         this->addChild(m_resumeButton, 2);
+        this->addChild(m_restartButton, 2);
+        this->addChild(m_exitButton, 2);
         m_bg->setVisible(false);
         m_resumeButton->setVisible(false);
+        m_restartButton->setVisible(false);
         m_exitButton->setVisible(false);
 
         // ------- Lemmings count.
@@ -207,8 +227,9 @@ void GameScene::update(float d)
 
         Director::getInstance()->stopAnimation();
         m_bg->setVisible(true);
-        m_exitButton->setVisible(true);
         m_resumeButton->setVisible(true);
+        m_restartButton->setVisible(true);
+        m_exitButton->setVisible(true);
         return;
     }
 
@@ -394,7 +415,7 @@ void GameScene::update(float d)
 
                 m_savedLemmingsLabel->setString(std::to_string(++m_savedLemmings));
                 m_remainingLemmingsLabel->setString(std::to_string(--m_remainingLemmings));
-
+                // Winning condition.
                 if (m_savedLemmings >= m_winLemmings)
                 {
                     AppDelegate::openScene<WinningScene>();
@@ -402,9 +423,10 @@ void GameScene::update(float d)
 
                 continue;
             }
-            if (m_savedLemmings >= m_winLemmings)
+            // Losing condition.
+            if (m_remainingLemmings == 0 && m_savedLemmings < m_winLemmings) /*timeSpent == fullTime*/
             {
-				AppDelegate::openScene<WinningScene>();
+                AppDelegate::openScene<LosingScene>();
             }
 
             it++;

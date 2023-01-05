@@ -19,7 +19,7 @@ public:
     virtual bool init() override;
 
     virtual void update(float d) override;
-    
+
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event);
 
     CREATE_FUNC(GameScene);
@@ -41,11 +41,11 @@ public:
     void selectDiggerTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
     void selectUmbrellaTask(cocos2d::Ref *sender, cocos2d::ui::Widget::TouchEventType type);
 
-	// Getter of remaining lemmings
-	int getRemainingLemmings() const { return m_remainingLemmings; }
-    
+    // Getter of remaining lemmings
+    int getRemainingLemmings() const { return m_remainingLemmings; }
+
     // Getter of timeSpent
-	char* getTimeSpent() const { return m_timeSpent; }
+    char *getTimeSpent() const { return m_timeSpent; }
 
 private:
     static const int NUM_BUTTONS = 6;
@@ -63,7 +63,7 @@ private:
     cocos2d::TMXLayer *m_tileMapLayer;
 
     // Labels for counting lemmings.
-    cocos2d::Label *m_remainingLemmingsLabel;   
+    cocos2d::Label *m_remainingLemmingsLabel;
     cocos2d::Label *m_savedLemmingsLabel;
     cocos2d::Label *m_winLemmingsLabel;
 
@@ -77,18 +77,19 @@ private:
 
     int m_remainingTasks[NUM_BUTTONS - 1];
 
-    int m_maxLemmings;       // maximum number of lemmings that can be spawned
-    int m_spawnedLemmings;   // lemmings that have been spawned
+    int m_maxLemmings;           // maximum number of lemmings that can be spawned
+    int m_spawnedLemmings;       // lemmings that have been spawned
     int m_remainingLemmings = 0; // lemmings that have not exited the level
     int m_deadLemmings = 0;      // lemmings that have died
-    int m_savedLemmings = 5;     // lemmings that have been saved
-    int m_winLemmings = 5;  // lemmings that have to be saved to win
+    int m_savedLemmings = 0;     // lemmings that have been saved
+    int m_winLemmings = 5;       // lemmings that have to be saved to win
     float m_spawnTimer;
-	char* m_timeSpent = "coucou";    // time spent in the level
-    
+    char *m_timeSpent = ""; // time spent in the level
+
     // Paused menu variables
     cocos2d::ui::Button *m_resumeButton;
     cocos2d::ui::Button *m_exitButton;
+    cocos2d::ui::Button *m_restartButton;
     cocos2d::LayerColor *m_bg;
     bool PAUSED = false;
 };

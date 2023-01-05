@@ -37,6 +37,9 @@
     <ClCompile Include="..\Classes\Scenes\WinningScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\LosingScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="S:\Game\Classes\AppDelegate.h">
@@ -91,6 +94,9 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\WinningScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\LosingScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

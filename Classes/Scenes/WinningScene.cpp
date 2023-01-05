@@ -45,7 +45,7 @@ bool WinningScene::init()
 	this->addChild(winTime, 1);
     
     // Lemmings saved
-	Label* wLemmings = Label::createWithTTF("Lemmings saved : %i", "fonts/Marker Felt.ttf", 24);
+	Label* wLemmings = Label::createWithTTF("Lemmings saved : ", "fonts/Marker Felt.ttf", 24);
 	wLemmings->setPosition(cocos2d::Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 85));
 	this->addChild(wLemmings, 1);
 

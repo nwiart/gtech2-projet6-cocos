@@ -29,6 +29,7 @@
 #include "Scenes/GameScene.h"
 #include "Scenes/SettingsScene.h"
 #include "Scenes/WinningScene.h"
+#include "Scenes/LosingScene.h"
 
 
 
@@ -122,6 +123,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     GameScene* gameScene = GameScene::createScene();
     SettingsScene* settingsScene = SettingsScene::createScene();
 	WinningScene* winningScene = WinningScene::createScene();
+    LosingScene* losingScene = LosingScene::createScene();
     
     //titleMenu->init();
     director->runWithScene(titleMenu);
